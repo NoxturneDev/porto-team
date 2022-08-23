@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Image({url, alt}) {
+const imgType = {
+  
+}
+function Image({url, alt, type}) {
   return (
-    <img src={url} alt={alt} />
+    <img src={url} alt={alt} className=""/>
   )
 }
 

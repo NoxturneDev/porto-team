@@ -1,20 +1,20 @@
 import React from 'react'
 
 
-const containerType = {
-    center: 'container-flex',
-    right: 'container-flex-r',
-    left: 'container-flex-l',
-    col: {
-        center: 'container-flex-col',
-        top: 'container-flex-col-t',
-        bot: 'container-flex-col-b'
-    }
-}
 
 
 export function Container({ children, custom, full /*: boolean */, type }) {
-
+    const containerType = {
+        center: 'container-flex',
+        right: 'container-flex-r',
+        left: 'container-flex-l',
+        col: {
+            center: 'container-flex-col',
+            top: 'container-flex-col-t',
+            bot: 'container-flex-col-b'
+        }
+    }
+    
     function handleType(type) {
         switch (type) {
             case 'col-bot':

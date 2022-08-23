@@ -7,23 +7,23 @@
     /* --- UTILS AND UI --- */
     /* buttons */
     .button {
-        @apply shadow-md font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus: outline-none transition-all duration-200 uppercase
+        @apply shadow-md font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none transition-all duration-200 uppercase
     }
 
     .button-primary {
-        @apply button bg-dark hover: bg-semi-dark text-white
+        @apply button bg-dark hover:bg-semi-dark text-white
     }
 
     .button-primary-line {
-        @apply button hover: bg-dark text-dark border-dark border-2
+        @apply button hover:bg-dark text-dark border-dark border-2
     }
 
     .button-secondary {
-        @apply button bg-semi-dark hover: bg-dark text-white
+        @apply button bg-semi-dark hover:bg-dark text-white
     }
 
     .button-secondary-line {
-        @apply button hover: bg-semi-dark text-semi-dark
+        @apply button hover:bg-semi-dark text-semi-dark
     }
 
     /* cards */
