@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    /* --- utils, ui --- */
+    /* buttons */
+    .button {
+        @apply focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none transition-all duration-200
+    }
+
+    .button-primary {
+        @apply button bg-dark hover:bg-semi-dark text-white
+    }
+
+    /* transition */
+
+    /* --- layout --- */
+    /* container */
+    .container-flex {
+        @apply flex justify-center items-center
+    }
+
+    .container-flex-l {
+        @apply flex justify-center items-center
+    }
+
+    .container-flex-r {
+        @apply flex justify-center items-center
+    }
+    /* vertical container */
+    .container-flex-col{
+        @apply flex justify-center items-center
+    }
+    .container-flex-col-t{
+        @apply flex justify-center items-start
+    }
+    .container-flex-col-b{
+        @apply flex justify-center items-end
+    }
+
+}
