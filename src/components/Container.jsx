@@ -1,39 +1,39 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 
 const containerType = {
-    left: 'container-flex-l',
+    center: 'container-flex',
     right: 'container-flex-r',
-    top: 'container-flex-col-t',
-    bot: 'container-flex-col-b'
+    left: 'container-flex-l',
+    col: {
+        center: 'container-flex-col',
+        top: 'container-flex-col-t',
+        bot: 'container-flex-col-b'
+    }
 }
 
-export function Container({ children, custom, full, type }) {
+
+export function Container({ children, custom, full /*: boolean */, type }) {
 
     function handleType(type) {
         switch (type) {
-            case 'bot':
-                return containerType.bot
-            case 'top':
-                return containerType.top
+            case 'col-bot':
+                return containerType.col
+            case 'col-top':
+                return containerType.col.top
+            case 'col-center':
+                return containerType.col.center
             case 'left':
                 return containerType.left
             case 'right':
                 return containerType.right
+            default:
+                return containerType.center
         }
     }
 
-    // useEffect(() => {
-
-    //     handleType('bot')
-    // }, [])
-
     return (
-        <div className={`
-            ${handleType(type)} 
-            ${full ? 'h-screen w-screen' : 'h-full w-full'} 
-            ${custom} 
-        `}>
+        <div className={`${handleType(type)} ${full ? 'h-screen w-screen' : 'h-full w-full'} ${custom}`}>
             {children}
         </div>
     )

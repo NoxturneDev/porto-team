@@ -18,26 +18,29 @@
 
     /* --- layout --- */
     /* container */
+    .basic-container{
+        @apply p-7 my-4 
+    }
     .container-flex {
-        @apply flex justify-center items-center
+        @apply basic-container flex justify-center items-center
     }
 
     .container-flex-l {
-        @apply flex justify-center items-center
+        @apply basic-container flex justify-start items-center
     }
 
     .container-flex-r {
-        @apply flex justify-center items-center
+        @apply basic-container flex justify-end items-center
     }
     /* vertical container */
     .container-flex-col{
-        @apply flex justify-center items-center
+        @apply basic-container flex justify-center items-center
     }
     .container-flex-col-t{
-        @apply flex justify-center items-start
+        @apply basic-container flex justify-center items-start
     }
     .container-flex-col-b{
-        @apply flex justify-center items-end
+        @apply basic-container flex justify-center items-end
     }
 
 }
