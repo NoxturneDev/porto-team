@@ -1,4 +1,5 @@
 import React from 'react'
+import './css/index.css';
 import About from './pages/About'
 import LandingPage from './pages/LandingPage'
 import Project from './pages/Project'
