@@ -7,10 +7,11 @@ function LandingPage() {
   return (
     <>
       <Nav />
-      <Container custom="bg-yellow-400" full={true} type="bot">
+      <Container custom="bg-yellow-400" full={true} type="col-center">
           <h3 className='font-bold text-red-400'>JUMBOTRON</h3>
-          <Button text="test" />
+          <Button animate={true}>Test</Button>
       </Container>
+
     </>
   )
 }
