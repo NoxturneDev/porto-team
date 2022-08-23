@@ -10,3 +10,9 @@
 //         }
 //     }
 // }
+
+// class Animation {
+//     constructor({variants}){
+//         this.variants = variants
+//     }
+// }

@@ -29,9 +29,11 @@ function Button({ children, custom, type, animate }) {
         }
     }
 
+    // if animate is false, return without motion
     if (!animate) {
         return <button className={`${handleType(type)} ${custom}`}>{children}</button>
     }
+
     return (
         <motion.button
             initial={{ opacity: 0}}
