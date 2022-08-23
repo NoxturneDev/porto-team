@@ -63,15 +63,15 @@
 
     /* vertical container */
     .container-flex-col {
-        @apply basic-container flex justify-center items-center;
+        @apply basic-container flex flex-col justify-center items-center;
     }
 
     .container-flex-col-t {
-        @apply basic-container flex justify-center items-start;
+        @apply basic-container flex flex-col justify-center items-start;
     }
 
     .container-flex-col-b {
-        @apply basic-container flex justify-center items-end;
+        @apply basic-container flex flex-col justify-center items-end;
     }
 
     /* IMAGES */
