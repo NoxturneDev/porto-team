@@ -2,30 +2,27 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const buttonType = {
-    primary: {
-        fill: 'button-primary',
-        line: 'button-primary-line'
+    fill: {
+        primary: 'button-primary',
+        secondary: 'button-secondary'
     },
-    secondary: {
-        fill: 'button-secondary',
-        line: 'button-line'
+    line: {
+        primary: 'button-primary-line',
+        secondary: 'button-secondary-line'
     }
 }
 
-function Button({ children, custom, type, animate }) {
+function Button({ children, custom, type = buttonType.primary.fill, animate, fill = true /*boolean */ }) {
 
     function handleType(type) {
-        switch (type) {
-            case 'primary':
-                return buttonType.primary.fill
-            case 'primary-line':
-                return buttonType.primary.line
-            case 'secondary':
-                return buttonType.secondary.fill
-            case 'secondary-line':
-                return buttonType.secondary.line
-            default:
-                return buttonType.primary.fill
+        if (!fill) {
+            for (const button in buttonType.line) {
+                if (type === button) return buttonType.line[button]
+            }
+        } else {
+            for (const button in buttonType.fill) {
+                if (type === button) return buttonType.fill[button]
+            }
         }
     }
 
@@ -36,9 +33,9 @@ function Button({ children, custom, type, animate }) {
 
     return (
         <motion.button
-            initial={{ opacity: 0}}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{type: 'tween'}}
+            transition={{ type: 'tween' }}
             className={`${handleType(type)} ${custom}`}>{children}</motion.button>
     )
 }

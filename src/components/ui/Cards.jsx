@@ -1,20 +1,19 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+
 const cardsType = {
   sm: 'card-sm',
   md: 'card-md',
   lg: 'card-lg'
 }
+
 function Cards({ type, custom, children, animate }) {
 
   function handleType(type) {
-    switch (type) {
-      case 'sm':
-        return cardsType.sm
-      case 'md':
-        return cardsType.md
-      case 'lg':
-        return cardsType.lg
+    for (const card in cardsType) {
+      if (type === card) {
+        return cardsType[card]
+      }
     }
   }
 

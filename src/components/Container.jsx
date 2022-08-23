@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-export function Container({ children, custom, full /*: boolean */, type }) {
+export function Container({ children, custom, full /*: boolean */, type}) {
     const containerType = {
         center: 'container-flex',
         right: 'container-flex-r',

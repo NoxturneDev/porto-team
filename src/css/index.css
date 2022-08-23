@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-
     /* --- UTILS AND UI --- */
     /* buttons */
     .button {
@@ -23,7 +22,7 @@
     }
 
     .button-secondary-line {
-        @apply button hover:bg-semi-dark text-semi-dark
+        @apply button hover:bg-semi-dark text-semi-dark border-2 border-semi-dark hover:text-white
     }
 
     /* cards */
@@ -43,7 +42,7 @@
         @apply basic-card w-64 h-80;
     }
 
-    
+
     /* --- LAYOUT -- */
     /* container */
     .basic-container {
@@ -75,5 +74,32 @@
         @apply basic-container flex justify-center items-end;
     }
 
+    /* IMAGES */
+    .basic-image {
+        @apply shadow-md
+    }
 
+    .img-sm {
+        @apply basic-image w-20 h-auto
+    }
+
+    .img-md {
+        @apply basic-image w-32 h-auto
+    }
+
+    .img-lg {
+        @apply basic-image w-48 h-auto
+    }
+
+    .img-sm-rounded {
+        @apply w-20 h-auto rounded-sm
+    }
+
+    .img-md-rounded {
+        @apply w-32 h-auto rounded-md
+    }
+
+    .img-lg-rounded {
+        @apply w-48 h-auto rounded-md
+    }
 }
