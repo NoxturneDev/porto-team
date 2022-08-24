@@ -12,7 +12,19 @@ const buttonType = {
     }
 }
 
-function Button({ children, custom, type = buttonType.primary.fill, animate, fill = true /*boolean */ }) {
+/**
+ * 
+ * @param {String} children - for components children
+ * @param {String} custom - for custom tailwind classes
+ * @param {Boolean} type - default : primary fill, values : [primary, secondary]
+ * @param {Boolean} animate - animation state. default : true (animation running) return framer motion components
+ * @param {Boolean} fill - button fill style
+ * @return react components 
+ * 
+ */
+
+
+function Button({ children, custom, type = buttonType.primary.fill, animate = false, fill = true }) {
 
     function handleType(type) {
         if (!fill) {
@@ -27,17 +39,17 @@ function Button({ children, custom, type = buttonType.primary.fill, animate, fil
     }
 
     // if animate is false, return without motion
-    if (!animate) {
-        return <button className={`${handleType(type)} ${custom}`}>{children}</button>
+    if (animate || animate === "true") {
+        return (
+            <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ type: 'spring', duration: 0.5 }}
+                className={`${handleType(type)} ${custom}`}>{children}</motion.button>
+        )
     }
 
-    return (
-        <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ type: 'tween' }}
-            className={`${handleType(type)} ${custom}`}>{children}</motion.button>
-    )
+    return <button className={`${handleType(type)} ${custom}`}>{children}</button>
 }
 
 export default Button
