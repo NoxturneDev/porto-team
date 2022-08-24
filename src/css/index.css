@@ -46,7 +46,7 @@
     /* --- LAYOUT -- */
     /* container */
     .basic-container {
-        @apply p-7 my-4;
+        @apply p-7 bg-slate-500;
     }
 
     .container-flex {
@@ -67,11 +67,11 @@
     }
 
     .container-flex-col-t {
-        @apply basic-container flex flex-col justify-center items-start;
+        @apply basic-container flex flex-col justify-start items-center;
     }
 
     .container-flex-col-b {
-        @apply basic-container flex flex-col justify-center items-end;
+        @apply basic-container flex flex-col items-center justify-end;
     }
 
     /* IMAGES */
@@ -80,26 +80,33 @@
     }
 
     .img-sm {
-        @apply basic-image w-20 h-auto
-    }
-
-    .img-md {
         @apply basic-image w-32 h-auto
     }
 
+    .img-md {
+        @apply basic-image w-64 h-auto
+    }
+
     .img-lg {
-        @apply basic-image w-48 h-auto
+        @apply basic-image w-1/2 h-auto
+    }
+    .img-xl {
+        @apply basic-image w-2/3 h-auto
     }
 
     .img-sm-rounded {
-        @apply w-20 h-auto rounded-sm
+        @apply w-32 h-auto rounded-sm
     }
 
     .img-md-rounded {
-        @apply w-32 h-auto rounded-md
+        @apply w-64 h-auto rounded-md
     }
 
     .img-lg-rounded {
-        @apply w-48 h-auto rounded-md
+        @apply w-1/2 h-auto rounded-md
+    }
+
+    .img-xl-rounded {
+        @apply w-2/3 h-auto rounded-md
     }
 }
