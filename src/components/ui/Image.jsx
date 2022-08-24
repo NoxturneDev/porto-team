@@ -1,35 +1,60 @@
 import React from 'react'
 
-function Image({ url, alt, rounded = false, size, circle = false /* boolean */ }) {
+/**
+ * 
+ * @param {String} url - path to image source
+ * @param {String} alt - img alt properties
+ * @param {Boolean} rounded - default : false, for image rounded style
+ * @param {Boolean} circle - default : false, for circular image style
+ * @param {String} size - default : sm, for image component size. values = [sm, md, lg]  
+ * @returns react components
+ */
 
-  const imgType = {
-    sm: {
-      basic: 'img-sm',
-      rounded: 'img-rounded-sm',
-      circle: 'img-sm rounded full'
-    },
-    md: {
-      basic: 'img-md',
-      rounded: 'img-rounded-md',
-      circle: 'img-md rounded full'
-    },
-    lg: {
-      basic: 'img-lg',
-      rounded: 'img-rounded-lg',
-      circle: 'img-lg rounded full'
-    },
+function Image({ url, alt, size = 'sm', type = 'basic', custom = '' }) {
+
+  const basicImg = {
+    sm: 'img-sm',
+    md: 'img-md',
+    lg: 'img-lg'
   }
-  function handleType(size) {
-    for (const imgSize in imgType) {
-      if (size === imgSize) {
-        // console.log(imgType[size].rounded)
-        return imgType[imgSize].basic
-      }
+
+  const roundedImg = {
+    sm: 'img-rounded-sm',
+    md: 'img-rounded-md',
+    lg: 'img-rounded-lg'
+  }
+  const circleImg = {
+    sm: 'img-sm rounded-full',
+    md: 'img-md rounded-full',
+    lg: 'img-lg rounded-full'
+  }
+
+  function handleType(type) {
+    switch (type) {
+      case 'basic':
+        for (const sz in basicImg) {
+          if (size === sz) {
+            return basicImg[sz]
+          }
+        }
+      case 'rounded':
+        for (const sz in roundedImg) {
+          if (size === sz) {
+            return roundedImg[sz]
+          }
+        }
+      case 'circle':
+        for (const sz in circleImg) {
+          if (size === sz) {
+            return circleImg[sz]
+          }
+        }
     }
+
   }
 
   return (
-    <img src="../../assets/23.png" alt={alt} className={`${handleType(size)}`} />
+    <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
   )
 }
 
