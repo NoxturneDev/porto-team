@@ -11,7 +11,7 @@ import React from 'react'
  */
 
 
-export function Container({ children, custom, full, align = 'center', dir = 'row' }) {
+export function Container({ children, custom = '', full = false, align = 'center', dir = 'row' }) {
 
     const rowContainer = {
         center: 'container-flex',
