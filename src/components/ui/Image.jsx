@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {motion} from 'framer-motion'
 /**
  * 
  * @param {String} url - path to image source
@@ -10,23 +10,26 @@ import React from 'react'
  * @returns react components
  */
 
-function Image({ url, alt, size = 'sm', type = 'basic', custom = '' }) {
+function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animate = false }) {
 
   const basicImg = {
     sm: 'img-sm',
     md: 'img-md',
-    lg: 'img-lg'
+    lg: 'img-lg',
+    xl: 'img-xl'
   }
 
   const roundedImg = {
-    sm: 'img-rounded-sm',
-    md: 'img-rounded-md',
-    lg: 'img-rounded-lg'
+    sm: 'img-sm-rounded',
+    md: 'img-md-rounded',
+    lg: 'img-lg-rounded',
+    xl: 'img-xl-rounded'
   }
   const circleImg = {
-    sm: 'img-sm rounded-full',
-    md: 'img-md rounded-full',
-    lg: 'img-lg rounded-full'
+    sm: 'rounded-full w-32 h-32',
+    md: 'rounded-full w-48 h-48',
+    lg: 'rounded-full w-72 h-72',
+    xl: 'rounded-full w-2/3 h2/3'
   }
 
   function handleType(type) {
@@ -53,6 +56,15 @@ function Image({ url, alt, size = 'sm', type = 'basic', custom = '' }) {
 
   }
 
+  if (animate || animate === "true") {
+    return (
+      <motion.img
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{type: "spring"}}
+        src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
+    )
+  }
   return (
     <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
   )
