@@ -27,7 +27,7 @@
 
     /* cards */
     .basic-card {
-        @apply m-4 p-4 rounded shadow-md bg-slate-50;
+        @apply flex justify-center items-center m-4 p-4 rounded shadow-md bg-slate-50;
     }
 
     .card-sm {

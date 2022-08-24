@@ -7,30 +7,40 @@ const cardsType = {
   lg: 'card-lg'
 }
 
-function Cards({ type, custom, children, animate }) {
+/**
+ * 
+ * @param {String} children - component's children
+ * @param {String} size - card size. default: sm, values [sm, md, lg]
+ * @param {String} custom - custom tailwind classes for the components
+ * @param {Boolean} animate - animation state, default : false
+ * @returns 
+ */
 
-  function handleType(type) {
+function Card({ children, size = 'sm', custom = '', animate = false }) {
+
+  function handleType(size) {
     for (const card in cardsType) {
-      if (type === card) {
+      if (size === card) {
         return cardsType[card]
       }
     }
   }
 
-  if (!animate) {
+  if (animate || animate === "true") {
     return (
-      <div className={`${handleType(type)} ${custom}}`}>{children}</div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", duration: 1 }}
+        className={`${handleType(size)} ${custom}`}>{children}
+      </motion.div>
     )
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ type: "spring", duration: 1 }}
-      className={`${handleType(type)} ${custom}}`}>{children}
-    </motion.div>
+    <div className={`${handleType(size)} ${custom}`}>{children}</div>
   )
+
 }
 
-export default Cards
+export default Card
