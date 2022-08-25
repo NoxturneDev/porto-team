@@ -46,8 +46,8 @@ function Button({
   if (animate || animate === "true") {
     return (
       <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, x:-50 }}
+        animate={{ opacity: 1, x: 50}}
         transition={{ type: "spring", duration: 0.5 }}
         className={`${handleType(type)} ${custom}`}
       >
