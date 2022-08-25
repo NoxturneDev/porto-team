@@ -20,13 +20,13 @@ const buttonType = {
  * @param {Boolean} animate - animation state. default : true (animation running) return framer motion components
  * @param {Boolean} fill - button fill style
  * @return react components
- *
+ * 
  */
 
 function Button({
   children,
   custom,
-  type = buttonType.primary.fill,
+  type = 'primary',
   animate = false,
   fill = true,
 }) {
@@ -46,8 +46,8 @@ function Button({
   if (animate || animate === "true") {
     return (
       <motion.button
-        initial={{ opacity: 0, x:-50 }}
-        animate={{ opacity: 1, x: 50}}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 50 }}
         transition={{ type: "spring", duration: 0.5 }}
         className={`${handleType(type)} ${custom}`}
       >
