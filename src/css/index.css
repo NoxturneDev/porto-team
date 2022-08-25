@@ -46,7 +46,7 @@
     /* --- LAYOUT -- */
     /* container */
     .basic-container {
-        @apply p-7 bg-slate-500;
+        @apply p-7 ;
     }
 
     .container-flex {
@@ -108,5 +108,11 @@
 
     .img-xl-rounded {
         @apply w-2/3 h-auto rounded-md
+    }
+
+
+    /* TYPHOGRAPHY */
+    .paragraph{
+        @apply mb-3 font-light
     }
 }

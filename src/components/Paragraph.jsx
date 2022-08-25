@@ -9,18 +9,22 @@ import { motion } from 'framer-motion'
  */
 
 function Paragraph({ children, custom = '', animate = false }) {
-  if(animate){
-    <motion.p
-    initial={{opacity: 0, y: -25}}
-    animate={{opacity: 1, y: 0}}
-    transition={{type: "spring", duration: 1}}
-    className={`paragraph ${custom}`}
-    >
 
-    </motion.p>
+  if (animate || animate === "true") {
+    return (
+      <motion.p
+        initial={{ opacity: 0, y: -25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", duration: 0.7 }}
+        className={`paragraph font-poppins ${custom}`}
+      >
+        {children}
+      </motion.p>
+    )
   }
+
   return (
-    <p className={`paragraph ${custom}`}>{children}</p>
+    <p className={`paragraph font-poppins ${custom}`}>{children}</p>
   )
 }
 
