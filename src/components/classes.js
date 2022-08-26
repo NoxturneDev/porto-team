@@ -1,18 +1,20 @@
-// class StyleType {
-//     constructor({ style /* obj */, type }) {
-//         style = this.style
-//         type = this.type
-//     }
+// FRAMER MOTION
+import { motion } from 'framer-motion'
+import React from 'react'
+export class Motion {
+    constructor(variants) {
+        this.variants = variants
+    }
 
-//     handleType(type) {
-//         switch(type){
-//             case ''
-//         }
-//     }
-// }
-
-// class Animation {
-//     constructor({variants}){
-//         this.variants = variants
-//     }
-// }
+    components(children) {
+        return (
+            <motion.div
+                variants={this.variants}
+                // exit={this.exit}
+                animate="visible"
+                initial="hidden"
+            >
+                {children}
+            </motion.div>)
+    }
+}
