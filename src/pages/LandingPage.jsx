@@ -5,10 +5,11 @@ import Button from "../components/ui/Button";
 import Card from "../components/ui/Cards"
 import Image from "../components/ui/Image";
 import Classes from "../components/classes";
-
+import Caraousel from "../components/caraousel/Caraousel";
+import Section from "../components/Section";
 function LandingPage() {
   return (
-    <>
+    <div style={{overflowX: 'hidden'}}>
       <Nav />
       <Container custom="bg-slate-500 h-screen" align="left" full={true} dir='column'>
         <Image url="../assets/23.png" type="circle" custom="bg-slate-800" size="sm" animate="true"></Image>
@@ -20,7 +21,9 @@ function LandingPage() {
         <Card></Card>
         <Card></Card>
       </Container>
-    </>
+      <Caraousel></Caraousel>
+      <Section></Section>
+    </div>
   );
 }
 
