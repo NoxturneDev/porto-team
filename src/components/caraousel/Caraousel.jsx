@@ -16,14 +16,16 @@ function Caraousel() {
 
     function scrolling() {
         let st = window.scrollY
-        const offset = anim.current.offsetTop + anim.current.offsetHeight / 50 / 100
+        const offset = anim.current.offsetTop + anim.current.offsetHeight 
 
-        if (st < offset) {
+        if ( st > anim.current.offsetTop - 100) {
+            // console.log(anim.current.offsetTop)
             i--
-        } else {
+        } else if(st < offset) {
             i++
         }
 
+        console.log(st, offset, anim.current.offsetHeight + anim.current.offsetTop)
         gsap.to(anim.current, {
             x: i * 5,
             ease: "power2.out"
