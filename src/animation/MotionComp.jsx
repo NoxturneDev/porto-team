@@ -1,15 +1,23 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Motion } from '../components/classes.js'
-import { fade } from './variants.js'
 
-function MotionComp({ variants, init, animate, exit, children, custom }) {
-    const initAnim = new Motion(fade.in.right)
-    const comp = initAnim.components(children)
-
+/**
+ * 
+ * @param {Object} variants - variants animation object for framer motion
+ * @param {Object} children - component's children 
+ * @returns framer motion components
+ */
+function MotionComp({ children, variants }) {
     return (
-        <AnimatePresence exitBeforeEnter>
-            {comp}
+        <AnimatePresence exitBeforeEnter mode='wait'>
+            <motion.div
+                variants={variants}
+                exit="exit"
+                animate="visible"
+                initial="hidden"
+            >
+                {children}
+            </motion.div>
         </AnimatePresence>
     )
 }
