@@ -7,7 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion'
  * @param {Object} children - component's children 
  * @returns framer motion components
  */
-function MotionComp({ children, variants }) {
+
+function MotionComp({ children, variants, custom }) {
     return (
         <AnimatePresence exitBeforeEnter mode='wait'>
             <motion.div
@@ -15,6 +16,7 @@ function MotionComp({ children, variants }) {
                 exit="exit"
                 animate="visible"
                 initial="hidden"
+                {...custom}
             >
                 {children}
             </motion.div>
