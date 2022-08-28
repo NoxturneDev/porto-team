@@ -32,6 +32,46 @@ const transitions = {
     }
 }
 
+const scale = {
+    in: [0.5, 0.7, 0.8, 0.9],
+    out: [1.1, 1.2, 1.3, 1.5]
+}
+
+
+const gestures = {
+    tap: {
+        scale: {
+            in: {
+                sm: { scale: scale.in[3] },
+                md: { scale: scale.in[2] },
+                lg: { scale: scale.in[1] },
+                xl: { scale: scale.in[0] }
+            },
+            out: {
+                sm: { scale: scale.out[3] },
+                md: { scale: scale.out[2] },
+                lg: { scale: scale.out[1] },
+                xl: { scale: scale.out[0] }
+            }
+        }
+    },
+    hover: {
+        scale: {
+            in: {
+                sm: { scale: scale.in[3] },
+                md: { scale: scale.in[2] },
+                lg: { scale: scale.in[1] },
+                xl: { scale: scale.in[0] }
+            },
+            out: {
+                sm: { scale: scale.out[3] },
+                md: { scale: scale.out[2] },
+                lg: { scale: scale.out[1] },
+                xl: { scale: scale.out[0] }
+            }
+        }
+    },
+}
 
 function initVariants(obj) {
     const { init, start, exit, transition, time } = obj
@@ -97,6 +137,6 @@ const animations = {
     slide
 }
 
-export default animations
+export { animations, gestures }
 
 // TODO : DYNAMIC TRANSITION, SMOOTHER ANIMATION, CUSTOM ANIMATION FUNCTION, GESTURES
