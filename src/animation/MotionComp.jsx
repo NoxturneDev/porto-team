@@ -51,7 +51,7 @@ const gesturesList = {
     }
 }
 
-function MotionComp({ children, animation, transition, gestures, gesturesAnimation, gesturesSize = "sm" }) {
+function MotionComp({ children, animation, transition, gestures, gesturesAnimation, gesturesSize = "sm", classes}) {
 
     const selectOption = (select, obj, prop) => {
         for (const i in obj) {
@@ -96,6 +96,7 @@ function MotionComp({ children, animation, transition, gestures, gesturesAnimati
                 initial="hidden"
                 whileTap={gestures === "tap" ? handleGestures("tap") : ''}
                 whileHover={gestures === "hover" ? handleGestures("hover") : ''}
+                className={`${classes}`}
             >
                 {children}
             </motion.div>
