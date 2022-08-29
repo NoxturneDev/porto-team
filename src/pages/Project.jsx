@@ -6,11 +6,13 @@ function Project() {
   return (
     <>
       <Nav />
-      <div className="font-bold text-4xl tracking-wider text-center ">
-        <h1 className="tracking-[.25em]">PROJECTKU</h1>
+      <div className="font-bold text-center ">
+        <h1 className="tracking-[.25em] header-lg">PROJECTKU</h1>
       </div>
       <ProjectSection title="TITLE 1" url="/" img="../assets/23.png" desc={description} />
       <ProjectSection title="TITLE 2" url="/" img="../assets/23.png" desc={description} />
+      <ProjectSection title="TITLE 3" url="/" img="../assets/23.png" desc={description} />
+      <ProjectSection title="TITLE 4" url="/" img="../assets/23.png" desc={description} />
     </>
   );
 }
