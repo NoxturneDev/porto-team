@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import MotionComp from "../../animation/MotionComp";
 
 const buttonType = {
   fill: {
@@ -23,13 +24,7 @@ const buttonType = {
  * 
  */
 
-function Button({
-  children,
-  custom,
-  type = 'primary',
-  animate = false,
-  fill = true,
-}) {
+function Button({ children = '', custom, type = 'primary', animate = false, fill = true, }) {
   function handleType(type) {
     if (!fill) {
       for (const button in buttonType.line) {
@@ -45,15 +40,8 @@ function Button({
   // if animate is false, return without motion
   if (animate || animate === "true") {
     return (
-      <motion.button
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 50 }}
-        transition={{ type: "spring", duration: 0.5 }}
-        className={`${handleType(type)} ${custom}`}
-      >
-        {children}
-      </motion.button>
-    );
+      <MotionComp gestures="hover" gesturesAnimation="scale-in" gesturesSize="sm" classes={"button-primary"}>Test</MotionComp>
+    )
   }
   return (
     <button className={`${handleType(type)} ${custom}`}>{children}</button>
