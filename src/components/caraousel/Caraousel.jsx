@@ -6,70 +6,80 @@ import { Container } from '../Container'
 import Card from '../ui/Cards'
 import Button from '../ui/Button'
 import ProjectSection from '../project/ProjectSection'
+import Slides from './Slides'
 
 function Caraousel() {
     let i = 0
     const anim = useRef(null)
     const slide = useRef(null)
-    let index = 1
     const description = ['lorem anjay mabar mantpa jiwa aiowdnaownd', 'aidnai aijn anjir keren banget ini gwa cokkks']
+    const active = useRef(null)
 
     function scrolling() {
         let st = window.scrollY
-        const offset = anim.current.offsetTop + anim.current.offsetHeight 
+        const offset = anim.current.offsetTop + anim.current.offsetHeight
 
-        if ( st > anim.current.offsetTop - 100) {
+        if (st > anim.current.offsetTop - 100) {
             // console.log(anim.current.offsetTop)
             i--
-        } else if(st < offset) {
+        } else if (st < offset) {
             i++
         }
 
-        console.log(st, offset, anim.current.offsetHeight + anim.current.offsetTop)
         gsap.to(anim.current, {
             x: i * 5,
             ease: "power2.out"
         })
     }
 
+    let index = 0
+
+    function slideIt(direction) {
+        const targets = slide.current.children
+         
+        if (direction === "next") {
+            console.log('next')
+            gsap.fromTo(targets[index], { xPercent: index * 100 }, { xPercent: -100 * index })
+            gsap.to(targets[index - 1], { xPercent: -100 * index })
+        } 
+        if (direction === "prev") {
+            console.log('prev')
+            const current = gsap.getProperty(targets[index], 'xPercent')
+            gsap.fromTo(targets[index], { xPercent: current }, { xPercent: -100 * index })
+            gsap.to(targets[index + 1], { xPercent: 100 * index })
+        }
+    }
+
     function prevSlide() {
         index--
-
-        let w = slide.current.offsetWidth / 4
-        let current = w * index * -1
-
         if (index < 0) {
-            // gsap.fromTo(slide.current, {opacity: 0, x: current}, {opacity: 1,})
             index = 0
             return
         }
 
-        console.log(index)
-        gsap.to(slide.current, { translateX: `${current}px` })
-
+        slideIt("prev")
         return
     }
 
     function nextSlide() {
-        let w = slide.current.offsetWidth / 4
+        const targets = slide.current.children
 
-        if (index >= 4) {
-            index = 4
+        index++
+        if (index >= targets.length) {
+            index = targets.length
             return
         }
 
-        console.log(index)
-        gsap.to(slide.current, { translateX: `-${w * index}px` })
-
-        index++
+        slideIt("next")
         return
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', scrolling)
+        gsap.set(slide.current, {xPercent: 200})
+        // window.addEventListener('scroll', scrolling)
 
         return (() => {
-            window.removeEventListener('scroll', scrolling)
+            // window.removeEventListener('scroll', scrolling)
         })
     })
 
@@ -88,31 +98,23 @@ function Caraousel() {
                 </div>
             </Section>
             <Section custom="p-0">
-                <div className='container-flex min-w-max p-0' ref={slide}>
-                    {/* <div className="carousel-item" >
-                    <Container custom="bg-red-400"></Container>
-                </div>
-                <div className="carousel-item">
-                    <Container custom="bg-red-400"></Container>
-                </div>
-                <div className="carousel-item">
-                    <Container custom="bg-red-400"></Container>
-                </div> */}
-
-                    <div className="container-flex w-screen h-screen bg-red-400" >
-                        <ProjectSection title="TITLE 1" url="/" img="../assets/23.png" desc={description} />
-                    </div>
-                    <div className="container-flex w-screen h-screen bg-red-500" >
-                        <ProjectSection title="TITLE 2" url="/" img="../assets/23.png" desc={description} />
-                    </div>
-                    <div className="container-flex w-screen h-screen bg-red-600" >
-                        <ProjectSection title="TITLE 2" url="/" img="../assets/23.png" desc={description} />
-                    </div>
-                    <div className="container-flex w-screen h-screen bg-red-700" >
-                        <ProjectSection title="TITLE 2" url="/" img="../assets/23.png" desc={description} />
-                    </div>
-
-                </div>
+                <ul className='container-flex w-screen bg-red-400 p-0' ref={slide} >
+                    <li className='slides slide-1' key={1}>
+                        <Slides position="next">Test 1</Slides>
+                    </li>
+                    <li className='slides slide-2' key={2}>
+                        <Slides position="current">Test 2</Slides>
+                    </li>
+                    <li className='slides slide-3' key={3}>
+                        <Slides position="next">Test 3</Slides>
+                    </li>
+                    <li className='slides slide-4' key={4}>
+                        <Slides position="next">Test 4</Slides>
+                    </li>
+                    <li className='slides slide-5' key={5}>
+                        <Slides position="next">Test 5</Slides>
+                    </li>
+                </ul>
                 <div className="button-group-floating container-flex p-0 absolute w-screen h-screen">
                     <div className="container-flex-l w-full px-6">
 
@@ -122,7 +124,7 @@ function Caraousel() {
                     </div>
                     <div className="container-flex-r w-full px-6">
                         <div onClick={nextSlide}>
-                            <Button>Next</Button>
+                            <Button animate={true}>Next</Button>
                         </div>
                     </div>
                 </div>
@@ -132,3 +134,5 @@ function Caraousel() {
 }
 
 export default Caraousel
+
+// TODO: New slider functionality, better one
