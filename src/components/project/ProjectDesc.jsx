@@ -10,11 +10,9 @@ function ProjectDesc({ title, url, desc }) {
                 {title}
             </h2>
 
-            {desc.map((p, i) => {
-               return <Paragraph custom="text-xl mb-2" key={i}>
-                    {p}
-                </Paragraph>
-            })}
+            <Paragraph>
+                {desc}
+            </Paragraph>
 
             <div className='my-10 text-xl'>
                 <Link to={url}>View Project</Link>
