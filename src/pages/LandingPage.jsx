@@ -7,7 +7,7 @@ import Image from "../components/ui/Image";
 import Caraousel from "../components/caraousel/Caraousel";
 import Section from "../components/Section";
 import MotionComp from "../animation/MotionComp";
-import { fade } from "../animation/variants.js"
+
 
 function LandingPage() {
   return (
@@ -25,7 +25,7 @@ function LandingPage() {
       </Container>
       <Caraousel></Caraousel>
       <Section></Section>
-      <MotionComp variants={fade.in.left}>
+      <MotionComp animation="fade-up" gestures="hover" gesturesAnimation="scale-in">
         <Container custom="bg-slate-400" full="true">
           <Image url="../assets/23.png" type="circle" custom="bg-slate-800" size="sm"></Image>
         </Container>
