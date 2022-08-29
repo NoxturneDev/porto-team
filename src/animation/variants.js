@@ -74,15 +74,21 @@ const gestures = {
 }
 
 function initVariants(obj) {
-    const { init, start, exit, transition, time } = obj
+    const { init, start, exit, transition } = obj
 
     const variants = {
         hidden: init,
         visible: {
             ...start,
-            transition: { ...transition, ...time }
+            ...transition 
         },
-        exit: exit
+        exit: exit,
+        set custom(value) {
+            this.visible = {
+                ...start,
+                ...value
+            }
+        }
     }
 
     return variants
@@ -95,26 +101,25 @@ const fade = {
         start: { opacity: 1, x: 0 },
         exit: { opacity: 0, x: '-100%' },
         transition: { ...transitions.spring.normal },
-        time: {
-            duration: 1,
-            delay: 2
-        }
     }),
-    right: {
-        hidden: { opacity: 0, x: '100%' },
-        visible: {
-            opacity: 1,
-            x: '0',
-            transition: { ...transitions.spring.normal }
-        },
-        exit: { opacity: 0, x: '100%' }
-    },
-    up: initVariants(
-        { opacity: 0, y: '-100%' }, { opacity: 1, y: 0 }, { opacity: 0, y: '-100%' }
-    ),
-    bottom: initVariants(
-        { opacity: 0, y: '100%' }, { opacity: 1, y: 0 }, { opacity: 0, y: '100%' }
-    ),
+    right: initVariants({
+        init: { opacity: 0, x: '-100%' },
+        start: { opacity: 1, x: 0 },
+        exit: { opacity: 0, x: '-100%' },
+        transition: { ...transitions.spring.normal },
+    }),
+    up: initVariants({
+        init: { opacity: 0, x: '-100%' },
+        start: { opacity: 1, x: 0 },
+        exit: { opacity: 0, x: '-100%' },
+        transition: { ...transitions.spring.normal },
+    }),
+    bottom: initVariants({
+        init: { opacity: 0, x: '-100%' },
+        start: { opacity: 1, x: 0 },
+        exit: { opacity: 0, x: '-100%' },
+        transition: { ...transitions.spring.normal },
+    }),
 }
 
 const slide = {
@@ -139,4 +144,4 @@ const animations = {
 
 export { animations, gestures }
 
-// TODO : DYNAMIC TRANSITION, SMOOTHER ANIMATION, CUSTOM ANIMATION FUNCTION, GESTURES
+// TODO : DYNAMIC TRANSITION, SMOOTHER ANIMATION, CUSTOM ANIMATION FUNCTION, //GESTURES

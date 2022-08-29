@@ -63,13 +63,19 @@ function MotionComp({ children, animation, transition, gestures, gesturesAnimati
             }
         }
     }
+    
+    // TODO: CREATE DYNAMIC TRANSITION
+    const handleTransition = () => {
+
+    }
+
     const variants = () => {
         for (const variant in variantList) {
             if (animation === variant) {
                 const obj = variantList[animation]
 
                 if (transition) {
-                    obj.visible.transition = transition
+                    obj.custom = "test"
                 }
 
                 console.log(obj)
