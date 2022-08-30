@@ -1,5 +1,6 @@
 import React from 'react'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
+import MotionComp from '../../animation/Motion'
 /**
  * 
  * @param {String} url - path to image source
@@ -58,11 +59,9 @@ function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animate = f
 
   if (animate || animate === "true") {
     return (
-      <motion.img
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{type: "spring"}}
-        src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
+      <MotionComp animation="fade-up" gestures="hover" gesturesAnimation="scale-out">
+        <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
+      </MotionComp>
     )
   }
   return (

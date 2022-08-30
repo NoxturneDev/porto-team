@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import MotionComp from '../../animation/Motion'
 
 const cardsType = {
   sm: 'card-sm',
@@ -28,12 +28,9 @@ function Card({ children, size = 'sm', custom = '', animate = false }) {
 
   if (animate || animate === "true") {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", duration: 1 }}
-        className={`${handleType(size)} ${custom}`}>{children}
-      </motion.div>
+      <MotionComp animation="mini-fade-up" gestures="hover" gesturesAnimation="scale-in" classes={`${handleType(size)} ${custom}`}>
+        {children}
+      </MotionComp>
     )
   }
 
