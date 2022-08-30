@@ -18,6 +18,10 @@ const variantList = {
     'slide-right': animations.slide.right,
     'slide-up': animations.slide.up,
     'slide-down': animations.slide.bottom,
+    'mini-fade-left': animations.mini.fade.left,
+    'mini-fade-right': animations.mini.fade.right,
+    'mini-fade-top': animations.mini.fade.top,
+    'mini-fade-bottom': animations.mini.fade.bottom,
 }
 
 const gesturesList = {
@@ -51,8 +55,18 @@ const gesturesList = {
     }
 }
 
-function MotionComp({ children, animation, transition, gestures, gesturesAnimation, gesturesSize = "sm", classes}) {
+/**
+ * 
+ * @param {String} animation - animation type. values ['type-direction'], ex : ['fade-left]. possible type [fade, slide]
+ * @param {String} transition - custom transition
+ * @param {String} gestures - gestures animation type, values ["tap", "hover"]
+ * @param {String} gesturesAnimation - gesture animation on invoked. values ["scale-in", "scale-out"]
+ * @param {String} gesturesSize - gesture animation size, values ["sm", "md", "lg", "xl"]
+ * @param {String} classes - tailwind classes
+ * @returns 
+ */
 
+function MotionComp({ children, animation, transition, gestures, gesturesAnimation, gesturesSize = "sm", classes }) {
     const selectOption = (select, obj, prop) => {
         for (const i in obj) {
             if (select === i) {
@@ -63,10 +77,10 @@ function MotionComp({ children, animation, transition, gestures, gesturesAnimati
             }
         }
     }
-    
-    // TODO: CREATE DYNAMIC TRANSITION
-    const handleTransition = () => {
 
+    // TODO: CREATE DYNAMIC TRANSITION
+    const handleTransition = (transition) => {
+        console.log(transition)
     }
 
     const variants = () => {
@@ -75,10 +89,9 @@ function MotionComp({ children, animation, transition, gestures, gesturesAnimati
                 const obj = variantList[animation]
 
                 if (transition) {
-                    obj.custom = "test"
+                    obj.visible.transition = handleTransition(transition)   
                 }
-
-                console.log(obj)
+                
                 return obj
             }
         }

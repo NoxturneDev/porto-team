@@ -37,7 +37,6 @@ const scale = {
     out: [1.1, 1.2, 1.3, 1.5]
 }
 
-
 const gestures = {
     tap: {
         scale: {
@@ -73,73 +72,115 @@ const gestures = {
     },
 }
 
-function initVariants(obj) {
-    const { init, start, exit, transition } = obj
-
-    const variants = {
-        hidden: init,
-        visible: {
-            ...start,
-            ...transition 
-        },
-        exit: exit,
-        set custom(value) {
-            this.visible = {
-                ...start,
-                ...value
-            }
-        }
-    }
-
-    return variants
-}
-
 // FRAMER MOTION VARIANTS
 const fade = {
-    left: initVariants({
-        init: { opacity: 0, x: '-100%' },
-        start: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: '-100%' },
-        transition: { ...transitions.spring.normal },
-    }),
-    right: initVariants({
-        init: { opacity: 0, x: '-100%' },
-        start: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: '-100%' },
-        transition: { ...transitions.spring.normal },
-    }),
-    up: initVariants({
-        init: { opacity: 0, x: '-100%' },
-        start: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: '-100%' },
-        transition: { ...transitions.spring.normal },
-    }),
-    bottom: initVariants({
-        init: { opacity: 0, x: '-100%' },
-        start: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: '-100%' },
-        transition: { ...transitions.spring.normal },
-    }),
+    left: {
+        hidden: { opacity: 0, xPercent: -100 },
+        visible: {
+            opacity: 1, xPercent: 0,
+            transition: { ...transitions.spring.normal }
+        },
+        exit: { opacity: 0, xPercent: -100 },
+    },
+    right: {
+        hidden: { opacity: 0, xPercent: 100 },
+        visible: {
+            opacity: 1, xPercent: 0,
+            transition: { ...transitions.spring.normal }
+        },
+        exit: { opacity: 0, xPercent: 100 }
+    },
+    up: {
+        hidden: { opacity: 0, yPercent: -100 },
+        visible: {
+            opacity: 1, yPercent: 0,
+            transition: { ...transitions.spring.normal }
+        },
+        exit: { opacity: 0, yPercent: -100 }
+    },
+    bottom: {
+        hidden: { opacity: 0, yPercent: 100 },
+        visible: {
+            opacity: 1, yPercent: 0,
+            transition: { ...transitions.spring.normal }
+        },
+        exit: { opacity: 0, yPercent: 100 }
+    },
 }
 
+const mini = {
+    fade: {
+        left: {
+            hidden: { opacity: 0, x: -20 },
+            visible: {
+                opacity: 1, x: 0,
+                transition: {
+                    ...transitions.spring.normal
+                }
+            },
+            exit: { opacity: 0, x: -20 }
+        },
+        right: {
+            hidden: { opacity: 0, x: 20 },
+            visible: {
+                opacity: 1, x: 0,
+                transition: {
+                    ...transitions.spring.normal
+                }
+            },
+            exit: { opacity: 0, x: 20 }
+        },
+        top: {
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+                opacity: 1, x: 0,
+                transition: {
+                    ...transitions.spring.normal
+                }
+            },
+            exit: { opacity: 0, y: 20 }
+        },
+        bottom: {
+            hidden: { opacity: 0, y: -20 },
+            visible: {
+                opacity: 1, x: 0,
+                transition: {
+                    ...transitions.spring.normal
+                }
+            },
+            exit: { opacity: 0, y: -20 }
+        }
+    }
+}
+
+
 const slide = {
-    left: initVariants(
-        { x: '-100%' }, { x: 0 }, { x: '-100%' }, transitions.spring.heavy
-    ),
-    right: initVariants(
-        { x: '100%' }, { x: 0 }, { x: '100%' }
-    ),
-    up: initVariants(
-        { y: '-100%' }, { y: 0 }, { y: '-100%' }
-    ),
-    bottom: initVariants(
-        { y: '100%' }, { y: 0 }, { y: '100%' }
-    ),
+    left: {
+        hidden: { x: '-100%' },
+        visible: { x: 0 },
+        exit: { x: '-100%' }
+    },
+    right: {
+        hidden: { x: '100%' },
+        visible: { x: 0 },
+        exit: { x: '100%' }
+    },
+    up: {
+        hidden: { y: '-100%' },
+        visible: { y: 0 },
+        exit: { y: '-100%' }
+    },
+    bottom: {
+        hidden: { y: '100%' },
+        visible: { y: 0 },
+        exit: { y: '100%' }
+    },
 }
 
 const animations = {
     fade,
-    slide
+    slide,
+    mini
 }
 
 export { animations, gestures }
