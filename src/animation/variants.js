@@ -75,36 +75,36 @@ const gestures = {
 // FRAMER MOTION VARIANTS
 const fade = {
     left: {
-        hidden: { opacity: 0, xPercent: -100 },
+        hidden: { opacity: 0, x: '-100%' },
         visible: {
-            opacity: 1, xPercent: 0,
+            opacity: 1, x: 0,
             transition: { ...transitions.spring.normal }
         },
-        exit: { opacity: 0, xPercent: -100 },
+        exit: { opacity: 0, x: '-100%' },
     },
     right: {
-        hidden: { opacity: 0, xPercent: 100 },
+        hidden: { opacity: 0, x: '100%' },
         visible: {
-            opacity: 1, xPercent: 0,
+            opacity: 1, x: 0,
             transition: { ...transitions.spring.normal }
         },
-        exit: { opacity: 0, xPercent: 100 }
+        exit: { opacity: 0, x: ' 100%' }
     },
     up: {
-        hidden: { opacity: 0, yPercent: -100 },
+        hidden: { opacity: 0, y: '-100%' },
         visible: {
-            opacity: 1, yPercent: 0,
+            opacity: 1, y: 0,
             transition: { ...transitions.spring.normal }
         },
-        exit: { opacity: 0, yPercent: -100 }
+        exit: { opacity: 0, y: '-100%' }
     },
     bottom: {
-        hidden: { opacity: 0, yPercent: 100 },
+        hidden: { opacity: 0, y: '100%' },
         visible: {
-            opacity: 1, yPercent: 0,
+            opacity: 1, y: 0,
             transition: { ...transitions.spring.normal }
         },
-        exit: { opacity: 0, yPercent: 100 }
+        exit: { opacity: 0, y: '100%' }
     },
 }
 
