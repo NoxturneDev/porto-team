@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { animations, gestures } from './variants.js'
+import { animations, gestures, transitions } from './variants.js'
 
 /**
  * 
@@ -55,6 +55,18 @@ const gesturesList = {
     }
 }
 
+const transitionList = {
+    spring: {
+        slow: transitions.spring.slow,
+        normal: transitions.spring.normal,
+        fast: transitions.spring.fast
+    },
+    tween: {
+        slow: transitions.tween.slow,
+        normal: transitions.tween.normal,
+        fast: transitions.tween.fast
+    }
+}
 /**
  * 
  * @param {String} animation - animation type. values ['type-direction'], ex : ['fade-left]. possible type [fade, slide]
@@ -66,7 +78,8 @@ const gesturesList = {
  * @returns 
  */
 
-function MotionComp({ children, animation, transition, gestures, gesturesAnimation, gesturesSize = "sm", classes }) {
+function MotionComp({ children, animation, transition, speed, gestures, gesturesAnimation, gesturesSize = "sm", classes }) {
+
     const selectOption = (select, obj, prop) => {
         for (const i in obj) {
             if (select === i) {
@@ -79,8 +92,13 @@ function MotionComp({ children, animation, transition, gestures, gesturesAnimati
     }
 
     // TODO: CREATE DYNAMIC TRANSITION
-    const handleTransition = (transition) => {
-        console.log(transition)
+    const handleTransition = () => {
+        if(transition === "spring"){
+            return selectOption(speed, transitionList.spring)
+        }
+        if(transition === "tween"){
+            return selectOption(speed, transitionList.tween)
+        }
     }
 
     const variants = () => {
@@ -89,7 +107,7 @@ function MotionComp({ children, animation, transition, gestures, gesturesAnimati
                 const obj = variantList[animation]
 
                 if (transition) {
-                    obj.visible.transition = handleTransition(transition)   
+                    obj.visible.transition = handleTransition()   
                 }
                 
                 return obj

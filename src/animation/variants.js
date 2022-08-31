@@ -5,7 +5,7 @@ const transitions = {
             type: "spring",
             mass: 0.5
         },
-        heavy: {
+        fast: {
             type: "spring",
             mass: 1.2,
             stiffness: 110
@@ -183,6 +183,6 @@ const animations = {
     mini
 }
 
-export { animations, gestures }
+export { animations, gestures, transitions }
 
 // TODO : DYNAMIC TRANSITION, SMOOTHER ANIMATION, CUSTOM ANIMATION FUNCTION, //GESTURES
