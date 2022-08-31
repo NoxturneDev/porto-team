@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import MotionComp from '../animation/Motion'
 /**
  * 
  * @param {String} children - component's children
@@ -8,23 +8,20 @@ import { motion } from 'framer-motion'
  * @returns react components
  */
 
-function Paragraph({ children, custom = '', animate = false }) {
+function Paragraph({ children, custom = '', animation, align = "left" }) {
 
-  if (animate || animate === "true") {
+  if (animation) {
     return (
-      <motion.p
-        initial={{ opacity: 0, y: -25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", duration: 0.7 }}
-        className={`paragraph font-poppins ${custom}`}
-      >
+      <MotionComp
+      animation={`mini-${animation}`}
+      classes={`paragraph font-poppins ${custom} text-${align}`}>
         {children}
-      </motion.p>
+      </MotionComp>
     )
   }
 
   return (
-    <p className={`paragraph font-poppins ${custom}`}>{children}</p>
+    <p className={`paragraph font-poppins ${custom} text-${align}`}>{children}</p>
   )
 }
 

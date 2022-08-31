@@ -16,7 +16,7 @@ const cardsType = {
  * @returns 
  */
 
-function Card({ children, size = 'sm', custom = '', animate = false }) {
+function Card({ children, size = 'sm', custom = '', animation }) {
 
   function handleType(size) {
     for (const card in cardsType) {
@@ -26,9 +26,9 @@ function Card({ children, size = 'sm', custom = '', animate = false }) {
     }
   }
 
-  if (animate || animate === "true") {
+  if (animation) {
     return (
-      <MotionComp animation="mini-fade-up" gestures="hover" gesturesAnimation="scale-in" classes={`${handleType(size)} ${custom}`}>
+      <MotionComp animation={animation} gestures="hover" gesturesAnimation="scale-in" classes={`${handleType(size)} ${custom}`}>
         {children}
       </MotionComp>
     )

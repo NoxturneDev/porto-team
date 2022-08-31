@@ -11,7 +11,7 @@ import MotionComp from '../../animation/Motion'
  * @returns react components
  */
 
-function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animate = false }) {
+function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animation = "mini-fade-left" }) {
 
   const basicImg = {
     sm: 'img-sm',
@@ -57,9 +57,9 @@ function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animate = f
 
   }
 
-  if (animate || animate === "true") {
+  if (animation) {
     return (
-      <MotionComp animation="fade-up" gestures="hover" gesturesAnimation="scale-out">
+      <MotionComp animation={animation}>
         <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
       </MotionComp>
     )

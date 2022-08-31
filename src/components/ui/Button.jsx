@@ -23,7 +23,7 @@ const buttonType = {
  * 
  */
 
-function Button({ children = '', custom, type = 'primary', animate = false, fill = true, }) {
+function Button({ children = '', custom, type = 'primary', animation, fill = true, }) {
   function handleType(type) {
     if (!fill) {
       for (const button in buttonType.line) {
@@ -37,9 +37,9 @@ function Button({ children = '', custom, type = 'primary', animate = false, fill
   }
 
   // if animate is false, return without motion
-  if (animate || animate === "true") {
+  if (animation) {
     return (
-      <MotionComp gestures="tap" gesturesAnimation="scale-in" gesturesSize="sm">
+      <MotionComp gestures="tap" gesturesAnimation="scale-in" gesturesSize="sm" animation={`mini-${animation}`}>
         <button className={`${handleType(type)} ${custom}}`}>
           {children}
         </button>
