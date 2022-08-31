@@ -3,7 +3,7 @@ import { Container } from '../Container'
 import Image from '../ui/Image'
 import Section from '../Section';
 import ProjectDesc from './ProjectDesc';
-import MotionComp from '../../animation/MotionComp';
+import MotionComp from '../../animation/Motion';
 
 /**
  * 
@@ -14,41 +14,61 @@ import MotionComp from '../../animation/MotionComp';
  * @returns 
  */
 
-function ProjectSection({ title = "TITLE", img, url, desc, animation, }) {
+function ProjectSectionLeft({ title = "TITLE", img, url, desc, animation }) {
     if (animation) {
         return (
-            <MotionComp animation={animation}>
-                <Section custom='bg-slate-500'>
-                    <Container custom="shadow-2xl h-3/4 mr-4 p-0">
-                        <Image url={img} custom="h-full w-full" rounded={true} />
-                    </Container>
-                    <Container
-                        custom="w-100 h-3/4 translate-x-[-10rem]"
-                        dir="column"
-                    >
+            <Section custom='bg-slate-500'>
+                <Container custom="shadow-2xl h-max p-0 ml-10">
+                    <Image url={img} custom="w-full h-auto" rounded={true} animate="true" />
+                </Container>
+                <Container custom="h-3/4 translate-x-[-8rem]">
+                    <MotionComp animation="fade-right">
                         <ProjectDesc title={title} url={url} desc={desc} />
-                    </Container>
-                </Section >
-            </MotionComp>
+                    </MotionComp>
+                </Container>
+            </Section >
         )
     }
 
-    //TODO : custom classes tailwind add!
-    //TODO : KANAN KIRI BRO!
     return (
         <Section custom='bg-slate-500'>
-            <Container custom="shadow-2xl h-3/4 p-0 bg-red-400 ml-10">
-                <Image url={img} custom="h-full w-full" rounded={true} />
+            <Container custom="shadow-2xl p-0 h-max ml-10">
+                <Image url={img} custom="h-auto w-full" rounded={true} />
             </Container>
-            <Container
-                custom="w-100 h-3/4 translate-x-[-10rem]"
-                dir="column"
-                align="right"
-            >
+            <Container custom="w-100 h-3/4 translate-x-[-8rem]">
                 <ProjectDesc title={title} url={url} desc={desc} />
             </Container>
         </Section >
     )
 }
 
-export default ProjectSection
+function ProjectSectionRight({ title = "TITLE", img, url, desc, animation }) {
+    if (animation) {
+        return (
+            <Section custom='bg-blue-400'>
+                <Container custom="h-3/4 translate-x-[8rem]">
+                    <MotionComp animation="fade-left">
+                        <ProjectDesc title={title} url={url} desc={desc} align="right" />
+                    </MotionComp>
+                </Container>
+                <Container custom="shadow-2xl p-0 h-max mr-10">
+                    <Image url={img} custom="w-full h-auto" rounded={true} animate="true" />
+                </Container>
+            </Section >
+
+        )
+    }
+
+    return (
+        <Section custom='bg-blue-400'>
+            <Container custom="w-100 h-3/4 translate-x-[8rem]">
+                <ProjectDesc title={title} url={url} desc={desc} align="right" />
+            </Container>
+            <Container custom="shadow-2xl h-max p-0 mr-10">
+                <Image url={img} custom="h-auto w-full" rounded={true} />
+            </Container>
+        </Section >
+    )
+}
+
+export { ProjectSectionLeft, ProjectSectionRight }

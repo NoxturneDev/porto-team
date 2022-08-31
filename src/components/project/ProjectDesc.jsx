@@ -3,18 +3,20 @@ import { Container } from '../Container'
 import Paragraph from '../Paragraph'
 import { Link } from 'react-router-dom'
 
-function ProjectDesc({ title, url, desc }) {
+function ProjectDesc({ title, url, desc, align = "left" }) {
     return (
-        <Container custom="h-4/4 text-slate-200" dir="column" align="left">
-            <h2 className="font-semi-bold text-4xl mb-4 ">
+        <Container custom="h-4/4 text-slate-200" dir="column" align={align}>
+            <h2 className="header-sm text-slate-200">
                 {title}
             </h2>
 
-            <Paragraph>
-                {desc}
-            </Paragraph>
+            <div className='my-5'>
+                <Paragraph align={align}>
+                    {desc}
+                </Paragraph>
+            </div>
 
-            <div className='my-10 text-xl'>
+            <div className='my-5 text-xl'>
                 <Link to={url}>View Project</Link>
             </div>
         </Container>
