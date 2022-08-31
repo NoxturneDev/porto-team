@@ -20,7 +20,6 @@ function Caraousel() {
         const offset = anim.current.offsetTop + anim.current.offsetHeight
 
         if (st > anim.current.offsetTop - 100) {
-            // console.log(anim.current.offsetTop)
             i--
         } else if (st < offset) {
             i++
@@ -36,26 +35,58 @@ function Caraousel() {
 
     function slideIt(direction) {
         const targets = slide.current.children
-         
+
         if (direction === "next") {
             console.log('next')
-            gsap.fromTo(targets[index], { xPercent: index * 100 }, { xPercent: -100 * index })
-            gsap.to(targets[index - 1], { xPercent: -100 * index })
-        } 
+            if (index > 2) {
+                gsap.set(slide.current, { xPercent: 100, onComplete(){
+                    gsap.to(slide.current, {xPercent: 0})
+                } })
+                index = 0
+                return
+            }
+            gsap.to(slide.current, { xPercent: index * -100 })
+            // gsap.fromTo(targets[index], { xPercent: index * 100 }, { xPercent: -100 * index })
+            // gsap.to(targets[index - 1], { xPercent: -100 * index })
+
+            // if (index === targets.length) {
+            //     gsap.fromTo(targets[0], {xPercent: 100}, { xPercent: 0 })
+            //     gsap.to(targets[targets.length], {xPercent: 100})
+            //     index = 0
+            // }
+        }
         if (direction === "prev") {
-            console.log('prev')
-            const current = gsap.getProperty(targets[index], 'xPercent')
-            gsap.fromTo(targets[index], { xPercent: current }, { xPercent: -100 * index })
-            gsap.to(targets[index + 1], { xPercent: 100 * index })
+            if (index < -2) {
+                gsap.set(slide.current, { xPercent: -100, onComplete(){
+                    gsap.to(slide.current, {xPercent: 0})
+                } })
+                index = 0
+                return
+            }
+            gsap.to(slide.current, { xPercent: -index * 100 })
+
+            // const current = gsap.getProperty(targets[index], 'xPercent')
+            // gsap.fromTo(targets[index], { xPercent: current }, { xPercent: -100 * index })
+            // gsap.to(targets[index + 1], { xPercent: 100 * index, ease: "sine.out" })
+
+            // if (index === -1) {
+            //     console.log(index)
+            //     // gsap.set(slide.current, {xPercent: 100})
+            //     gsap.set(targets, {xPercent: 100 * index})
+            //     gsap.to(targets[0], {xPercent: 100 * targets.length})
+            //     gsap.to(targets[targets.length], { xPercent: 100 * targets.length })
+            //     index = targets.length
+            // }
         }
     }
 
     function prevSlide() {
         index--
-        if (index < 0) {
-            index = 0
-            return
-        }
+        // if (index < 0) {
+        //     index = -1
+        // }
+
+        console.log(index)
 
         slideIt("prev")
         return
@@ -65,7 +96,7 @@ function Caraousel() {
         const targets = slide.current.children
 
         index++
-        if (index >= targets.length) {
+        if (index > targets.length) {
             index = targets.length
             return
         }
@@ -75,11 +106,11 @@ function Caraousel() {
     }
 
     useEffect(() => {
-        gsap.set(slide.current, {xPercent: 200})
-        // window.addEventListener('scroll', scrolling)
+        console.log(gsap.getProperty(slide.current, "xPercent"))
+        window.addEventListener('scroll', scrolling)
 
         return (() => {
-            // window.removeEventListener('scroll', scrolling)
+            window.removeEventListener('scroll', scrolling)
         })
     })
 
@@ -97,29 +128,29 @@ function Caraousel() {
                     <Card size="md" custom="bg-slate-800"></Card>
                 </div>
             </Section>
-            <Section custom="p-0">
+            <Section custom="p-0 bg-slate-500">
                 <ul className='container-flex w-screen bg-red-400 p-0' ref={slide} >
-                    <li className='slides slide-1' key={1}>
-                        <Slides position="next">Test 1</Slides>
-                    </li>
-                    <li className='slides slide-2' key={2}>
-                        <Slides position="current">Test 2</Slides>
-                    </li>
-                    <li className='slides slide-3' key={3}>
+                    <li className='slides slide-1' >
                         <Slides position="next">Test 3</Slides>
                     </li>
-                    <li className='slides slide-4' key={4}>
-                        <Slides position="next">Test 4</Slides>
+                    <li className='slides slide-1'>
+                        <Slides position="next">Test 1</Slides>
                     </li>
-                    <li className='slides slide-5' key={5}>
-                        <Slides position="next">Test 5</Slides>
+                    <li className='slides slide-2'>
+                        <Slides position="current">Test 2</Slides>
+                    </li>
+                    <li className='slides slide-3'>
+                        <Slides position="next">Test 3</Slides>
+                    </li>
+                    <li className='slides slide-3'>
+                        <Slides position="next">Test 1</Slides>
                     </li>
                 </ul>
                 <div className="button-group-floating container-flex p-0 absolute w-screen h-screen">
                     <div className="container-flex-l w-full px-6">
 
                         <div onClick={prevSlide}>
-                            <Button>Prev</Button>
+                            <Button animate={true}>Prev</Button>
                         </div>
                     </div>
                     <div className="container-flex-r w-full px-6">
