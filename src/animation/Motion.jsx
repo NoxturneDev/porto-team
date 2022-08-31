@@ -70,7 +70,8 @@ const transitionList = {
 /**
  * 
  * @param {String} animation - animation type. values ['type-direction'], ex : ['fade-left]. possible type [fade, slide]
- * @param {String} transition - custom transition
+ * @param {String} transition - default : spring. custom transition type
+ * @param {String} speed - transition custom speed
  * @param {String} gestures - gestures animation type, values ["tap", "hover"]
  * @param {String} gesturesAnimation - gesture animation on invoked. values ["scale-in", "scale-out"]
  * @param {String} gesturesSize - gesture animation size, values ["sm", "md", "lg", "xl"]
@@ -78,7 +79,7 @@ const transitionList = {
  * @returns 
  */
 
-function MotionComp({ children, animation, transition, speed, gestures, gesturesAnimation, gesturesSize = "sm", classes }) {
+function MotionComp({ children, animation, transition = "spring", speed = "normal", gestures, gesturesAnimation, gesturesSize = "sm", classes }) {
 
     const selectOption = (select, obj, prop) => {
         for (const i in obj) {
@@ -91,12 +92,11 @@ function MotionComp({ children, animation, transition, speed, gestures, gestures
         }
     }
 
-    // TODO: CREATE DYNAMIC TRANSITION
     const handleTransition = () => {
-        if(transition === "spring"){
+        if (transition === "spring") {
             return selectOption(speed, transitionList.spring)
         }
-        if(transition === "tween"){
+        if (transition === "tween") {
             return selectOption(speed, transitionList.tween)
         }
     }
@@ -107,9 +107,9 @@ function MotionComp({ children, animation, transition, speed, gestures, gestures
                 const obj = variantList[animation]
 
                 if (transition) {
-                    obj.visible.transition = handleTransition()   
+                    obj.visible.transition = handleTransition()
                 }
-                
+
                 return obj
             }
         }
