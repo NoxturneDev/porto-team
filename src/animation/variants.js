@@ -130,10 +130,10 @@ const mini = {
             },
             exit: { opacity: 0, x: 20 }
         },
-        top: {
+        up: {
             hidden: { opacity: 0, y: 20 },
             visible: {
-                opacity: 1, x: 0,
+                opacity: 1, y: 0,
                 transition: {
                     ...transitions.spring.normal
                 }
@@ -143,7 +143,7 @@ const mini = {
         bottom: {
             hidden: { opacity: 0, y: -20 },
             visible: {
-                opacity: 1, x: 0,
+                opacity: 1, y: 0,
                 transition: {
                     ...transitions.spring.normal
                 }

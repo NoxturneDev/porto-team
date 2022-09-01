@@ -13,7 +13,7 @@ const variantList = {
     'slide-down': animations.slide.bottom,
     'mini-fade-left': animations.mini.fade.left,
     'mini-fade-right': animations.mini.fade.right,
-    'mini-fade-top': animations.mini.fade.top,
+    'mini-fade-up': animations.mini.fade.up,
     'mini-fade-bottom': animations.mini.fade.bottom,
 }
 
