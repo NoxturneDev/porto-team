@@ -1,19 +1,61 @@
 import React from "react";
 import Nav from "../components/Nav";
-import { ProjectSectionLeft, ProjectSectionRight } from "../components/project/ProjectSection";
-
+import {
+  ProjectSectionLeft,
+  ProjectSectionRight,
+} from "../components/project/ProjectSection";
+import Caraousel from "../components/caraousel/Caraousel";
 function Project() {
-  const description = ['lorem anjay mabar mantpa jiwa aiowdnaownd', 'aidnai aijn anjir keren banget ini gwa cokkks']
+  const desc = {
+    one: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
+    two: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
+    three:
+      "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
+    four: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
+    five: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
+  };
   return (
     <>
       <Nav />
       <div className="font-bold text-center ">
         <h1 className="tracking-[.25em] header-lg">PROJECTKU</h1>
       </div>
-      <ProjectSectionLeft title="TITLE 1" url="/" img="../assets/23.png" desc={description} animation="true" />
-      <ProjectSectionRight title="TITLE 2" url="/" img="../assets/23.png" desc={description} animation="true" />
-      <ProjectSectionLeft title="TITLE 3" url="/" img="../assets/23.png" desc={description} />
-      <ProjectSectionRight title="TITLE 4" url="/" img="../assets/23.png" desc={description} />
+      <ProjectSectionLeft
+        img="../assets/image/23.png"
+        title="ANTAR MEDIKA LANDING PAGE"
+        desc={desc.one}
+        url="https://antarmedika.com/"
+        animation
+      />
+      <ProjectSectionRight
+        img="../assets/image/23.png"
+        title="ANTAR MEDIKA PAGE"
+        desc={desc.two}
+        url="https://antarmedika.com/"
+        animation
+      />
+      <ProjectSectionLeft
+        img="../assets/image/23.png"
+        title="ANTAR MEDIKA LANDING PAGE"
+        desc={desc.three}
+        url="https://antarmedika.com/"
+        animation
+      />
+      <ProjectSectionRight
+        img="../assets/image/23.png"
+        title="ANTAR MEDIKA PAGE"
+        desc={desc.four}
+        url="https://antarmedika.com/"
+        animation
+      />
+      <ProjectSectionLeft
+        img="../assets/image/23.png"
+        title="ANTAR MEDIKA LANDING PAGE"
+        desc={desc.five}
+        url="https://antarmedika.com/"
+        animation
+      />
+      <Caraousel />
     </>
   );
 }
