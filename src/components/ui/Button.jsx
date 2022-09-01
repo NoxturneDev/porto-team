@@ -39,7 +39,10 @@ function Button({ children = '', custom, type = 'primary', animation, fill = tru
   // if animate is false, return without motion
   if (animation) {
     return (
-      <MotionComp gestures="tap" gesturesAnimation="scale-in" gesturesSize="sm" animation={`mini-${animation}`}>
+      <MotionComp
+        animation={`mini-${animation}`}
+        gestures={{ type: "tap", animation: "scale-in", scale: "sm" }}
+      >
         <button className={`${handleType(type)} ${custom}}`}>
           {children}
         </button>

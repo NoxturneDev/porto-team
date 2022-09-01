@@ -9,13 +9,11 @@ function ProjectDesc({ title, url, desc, align = "left" }) {
             <h2 className="header-sm text-slate-200">
                 {title}
             </h2>
-
             <div className='my-5'>
                 <Paragraph align={align}>
                     {desc}
                 </Paragraph>
             </div>
-
             <div className='my-5 text-xl'>
                 <Link to={url}>View Project</Link>
             </div>

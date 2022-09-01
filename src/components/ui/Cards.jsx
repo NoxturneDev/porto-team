@@ -28,7 +28,10 @@ function Card({ children, size = 'sm', custom = '', animation }) {
 
   if (animation) {
     return (
-      <MotionComp animation={animation} gestures="hover" gesturesAnimation="scale-in" classes={`${handleType(size)} ${custom}`}>
+      <MotionComp
+        animation={animation}
+        gestures={{ type: 'hover', animation: "scale-in", scale: "sm" }}
+        classes={`${handleType(size)} ${custom}`}>
         {children}
       </MotionComp>
     )
