@@ -117,9 +117,6 @@ function MotionComp({ children, animation, classes,
                 return obj
             }
         }
-
-        console.log(transition)
-
     }
 
     const handleGestures = (type) => {
