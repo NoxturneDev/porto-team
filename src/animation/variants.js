@@ -33,8 +33,8 @@ const transitions = {
 }
 
 const scale = {
-    in: [0.5, 0.7, 0.8, 0.9],
-    out: [1.1, 1.2, 1.3, 1.5]
+    in: [0.7, 0.8, 0.85, 0.95],
+    out: [1.1, 1.15, 1.2, 1.3]
 }
 
 const gestures = {
