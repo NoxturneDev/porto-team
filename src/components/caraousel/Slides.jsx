@@ -26,7 +26,7 @@ function Slides({ children, position }) {
         <div
             className={`container-flex w-screen h-screen bg-red-400`}>
 
-            <ProjectSectionRight title="TITLE 4" url="/" img="../assets/23.png" desc={'TESTANJAY'} />
+            <ProjectSectionRight title={children} url="/" img="../assets/23.png" desc={'TESTANJAY'} />
         </div>
     )
 }
