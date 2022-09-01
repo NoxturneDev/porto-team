@@ -59,7 +59,7 @@ function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animation =
 
   if (animation) {
     return (
-      <MotionComp animation={animation}>
+      <MotionComp animation={`mini-${animation}`}>
         <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
       </MotionComp>
     )
