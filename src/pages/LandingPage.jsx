@@ -7,13 +7,14 @@ import Image from "../components/ui/Image";
 import Caraousel from "../components/caraousel/Caraousel";
 import Section from "../components/Section";
 import MotionComp from "../animation/Motion";
-
+import JumbotronAnim from "../animation/JumbotronAnim";
 
 
 function LandingPage() {
   return (
     <div style={{ overflowX: 'hidden' }}>
       <Nav />
+      <JumbotronAnim />
       <Caraousel></Caraousel>
       <MotionComp animation="fade-left" transition={{ type: 'tween', speed: 'fast' }}>
         <Container full custom="bg-red-500"></Container>

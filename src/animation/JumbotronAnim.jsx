@@ -3,7 +3,8 @@ import { Container } from '../components/Container'
 
 function JumbotronAnim() {
     const CANVAS = useRef(null)
-
+    const anim = useRef(null)
+    const letter = useRef(null)
     const initAnim = () => {
         const ctx = CANVAS.current.getContext('2d')
         CANVAS.current.width = window.innerWidth
@@ -25,7 +26,7 @@ function JumbotronAnim() {
             draw() {
                 ctx.beginPath()
                 ctx.arc(this.position.x, this.position.y, this.size, 0, Math.PI * 2, false)
-                ctx.fillStyle = "rgb(15, 23, 42)"
+                ctx.fillStyle = "rgb(23, 31, 59)"
                 ctx.fill()
             }
 
@@ -49,7 +50,7 @@ function JumbotronAnim() {
 
         const init = () => {
 
-            for (let i = 1; i <= 90; i++) {
+            for (let i = 1; i <= 70; i++) {
                 let size = (Math.random() * 10 + 1)
                 const dots = new Dots({
                     position: {
@@ -74,7 +75,7 @@ function JumbotronAnim() {
                     let distance = ((arr[a].position.x - arr[b].position.x) * (arr[a].position.x - arr[b].position.x)) + ((arr[a].position.y - arr[b].position.y) * (arr[a].position.y - arr[b].position.y))
 
                     if (distance < (window.innerWidth / 7) * (window.innerHeight / 7)) {
-                        ctx.strokeStyle = "rgb(15, 23, 42)"
+                        ctx.strokeStyle = "rgb(90, 116, 139)"
                         ctx.lineWidth = 1
                         ctx.beginPath()
                         ctx.moveTo(arr[a].position.x, arr[a].position.y)
@@ -99,14 +100,24 @@ function JumbotronAnim() {
         init()
         animate()
     }
+
+    // const titleAnimation = () => {
+    //     const headerString = "JUMBOTRON"
+
+    //     headerString.split('').forEach(l => {
+    //         anim.current.innerHtml(`<span>${l}</span>`))
+    //     })
+    // }
+
     useEffect(() => {
+        // titleAnimation()
         initAnim()
     }, [])
     return (
         <Container full custom="bg-slate-800">
             <canvas ref={CANVAS}></canvas>
             <Container full custom="absolute">
-                <h1 className='header-lg text-white'>JUMBOTRON</h1>
+                <h1 className='header-lg text-white' ref={anim}><span ref={letter}>JUMBOTRON</span></h1>
             </Container>
         </Container>
     )
