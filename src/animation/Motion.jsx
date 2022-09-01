@@ -2,13 +2,6 @@ import React, { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { animations, gestures, transitions } from './variants.js'
 
-/**
- * 
- * @param {String} animation - animation type for the components. values "{animation name}-{direction}", ex : 'fade-left'
- * @param {Object} children - component's children 
- * @returns framer motion components
- */
-
 const variantList = {
     'fade-left': animations.fade.left,
     'fade-right': animations.fade.right,
@@ -70,18 +63,28 @@ const transitionList = {
 /**
  * 
  * @param {String} animation - animation type. values ['type-direction'], ex : ['fade-left]. possible type [fade, slide]
- * @param {String} transition - default : spring. custom transition type
- * @param {String} speed - transition custom speed
- * @param {String} gestures - gestures animation type, values ["tap", "hover"]
- * @param {String} gesturesAnimation - gesture animation on invoked. values ["scale-in", "scale-out"]
- * @param {String} gesturesSize - gesture animation size, values ["sm", "md", "lg", "xl"]
+ * @param {Object} transition - an object of custom transition value. customize transition type and speed
+ * @param {Object} gestures - gestures animation object, customize gesture type, scale, and animation
  * @param {String} classes - tailwind classes
  * @returns 
  */
 
-function MotionComp({ children, animation, transition = "spring", speed = "normal", gestures, gesturesAnimation, gesturesSize = "sm", classes }) {
+function MotionComp({ children, animation, classes,
+    transition = { type: 'spring', speed: "normal" },
+    gestures = { type: 'tap', animation: 'scale-in', scale: "sm" }}) {
 
+    /**
+     * 
+     * @param {String} select - key value to select in corresponding object key
+     * @param {Object} obj - target object to get the needed value
+     * @param {String} prop - add on object key if the object has deep nesting
+     * @returns 
+     */
+
+    // ? could be custom hook tho
     const selectOption = (select, obj, prop) => {
+        
+        /** @param { String } i - searched value inside target object */
         for (const i in obj) {
             if (select === i) {
 
@@ -93,12 +96,13 @@ function MotionComp({ children, animation, transition = "spring", speed = "norma
     }
 
     const handleTransition = () => {
-        if (transition === "spring") {
-            return selectOption(speed, transitionList.spring)
+        if (transition.type === "spring") {
+            return selectOption(transition.speed, transitionList.spring)
         }
-        if (transition === "tween") {
-            return selectOption(speed, transitionList.tween)
+        if (transition.type === "tween") {
+            return selectOption(transition.speed, transitionList.tween)
         }
+
     }
 
     const variants = () => {
@@ -106,21 +110,24 @@ function MotionComp({ children, animation, transition = "spring", speed = "norma
             if (animation === variant) {
                 const obj = variantList[animation]
 
-                if (transition) {
+                if (transition.type) {
                     obj.visible.transition = handleTransition()
                 }
 
                 return obj
             }
         }
+
+        console.log(transition)
+
     }
 
     const handleGestures = (type) => {
         if (type === "tap") {
-            return selectOption(gesturesAnimation, gesturesList.tap, gesturesSize)
+            return selectOption(gestures.animation, gesturesList.tap, gestures.scale)
         }
         if (type === "hover") {
-            return selectOption(gesturesAnimation, gesturesList.hover, gesturesSize)
+            return selectOption(gestures.animation, gesturesList.hover, gestures.scale)
         }
     }
 
@@ -131,8 +138,8 @@ function MotionComp({ children, animation, transition = "spring", speed = "norma
                 exit="exit"
                 animate="visible"
                 initial="hidden"
-                whileTap={gestures === "tap" ? handleGestures("tap") : ''}
-                whileHover={gestures === "hover" ? handleGestures("hover") : ''}
+                whileTap={gestures.type === "tap" ? handleGestures("tap") : ''}
+                whileHover={gestures.type === "hover" ? handleGestures("hover") : ''}
                 className={`${classes}`}
             >
                 {children}
