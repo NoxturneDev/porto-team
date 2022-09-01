@@ -2,7 +2,6 @@ import React from 'react'
 import MotionComp from '../animation/Motion'
 /**
  * 
- * @param {String} children - component's children
  * @param {String} custom - custom tailwind classes for the components
  * @param {boolean} animate - default : false - animation state, return framer motion components if true
  * @returns react components

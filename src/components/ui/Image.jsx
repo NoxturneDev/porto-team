@@ -1,13 +1,13 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import MotionComp from '../../animation/Motion'
+
 /**
  * 
  * @param {String} url - path to image source
  * @param {String} alt - img alt properties
- * @param {Boolean} rounded - default : false, for image rounded style
- * @param {Boolean} circle - default : false, for circular image style
- * @param {String} size - default : sm, for image component size. values = [sm, md, lg]  
+ * @param {String} type - type of the image. values = ["basic", "rounded", "circle"]
+ * @param {String} size - default : sm, for image component size. values = [sm, md, lg]
+ * @param {String} animation - animation for image components
  * @returns react components
  */
 

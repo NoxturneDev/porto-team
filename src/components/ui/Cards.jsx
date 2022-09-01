@@ -9,7 +9,6 @@ const cardsType = {
 
 /**
  * 
- * @param {String} children - component's children
  * @param {String} size - card size. default: sm, values [sm, md, lg]
  * @param {String} custom - custom tailwind classes for the components
  * @param {Boolean} animate - animation state, default : false

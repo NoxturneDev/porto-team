@@ -14,7 +14,6 @@ const buttonType = {
 
 /**
  *
- * @param {String} children - for components children
  * @param {String} custom - for custom tailwind classes
  * @param {Boolean} type - default : primary fill, values : [primary, secondary]
  * @param {Boolean} animate - animation state. default : true (animation running) return framer motion components
