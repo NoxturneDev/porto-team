@@ -9,7 +9,6 @@ function Caraousel() {
     let i = 0
     const anim = useRef(null)
     const slide = useRef(null)
-    const [click, setClick] = useState(true)
 
     function scrolling() {
         let st = window.scrollY
@@ -27,7 +26,16 @@ function Caraousel() {
         })
     }
 
-    let index = 0
+    let index = 0,
+    click = true
+
+    const start = () => {
+        click = false
+    }
+    const finish = () => {                
+        click = true
+    }
+
 
     function slideIt(direction) {
 
@@ -36,21 +44,32 @@ function Caraousel() {
             if (index > 2) {
                 gsap.set(slide.current, {
                     xPercent: 100, onComplete() {
-                        gsap.to(slide.current, { xPercent: 0, duration: 1})
+                        gsap.to(slide.current, { xPercent: 0, duration: 1, 
+                            onStart(){start()}, 
+                            onComplete(){finish()}
+                        })
                     }
                 })
                 index = 0
                 return
             }
-            gsap.to(slide.current, { xPercent: index * -100 , duration: 1})
+            const slideNext = gsap.to(slide.current, { xPercent: index * -100 , duration: 1, 
+                onStart(){start()},
+                onComplete(){finish()}
+            })
+
+            slideNext.play()
             console.log(index)
 
         }
         if (direction === "prev") {
             if (index < -2) {
                 const reset = gsap.set(slide.current, {
-                    xPercent: -100, onComplete() {
-                        gsap.to(slide.current, { xPercent: 0, duration: 1})
+                    xPercent: -100, onStart(){start()}, onComplete() {
+                        gsap.to(slide.current, { xPercent: 0, duration: 1, 
+                            onStart(){start()},
+                            onComplete(){finish()}
+                        })
                     }
                 })
 
@@ -60,14 +79,19 @@ function Caraousel() {
                 return
             }
 
-            gsap.to(slide.current, { xPercent: -index * 100, duration: 1 })
+            const slidePrev = gsap.to(slide.current, { xPercent: -index * 100 , duration: 1, 
+                onStart(){start()},
+                onComplete(){finish()}
+            })
+
+            slidePrev.play()
             console.log(index)
-
-
         }
     }
 
     function prevSlide() {
+        if(!click) return "ga bisa"
+
         index--
 
         slideIt("prev")
@@ -75,6 +99,7 @@ function Caraousel() {
     }
 
     function nextSlide() {
+        if(!click) return "ga bisa"
         const targets = slide.current.children
 
         index++
@@ -130,12 +155,12 @@ function Caraousel() {
                 <div className="button-group-floating container-flex p-0 absolute w-screen h-screen">
                     <div className="container-flex-l w-full px-6">
 
-                        <div onClick={click ? prevSlide : null}>
+                        <div onClick={prevSlide}>
                             <Button animate={true}>Prev</Button>
                         </div>
                     </div>
                     <div className="container-flex-r w-full px-6">
-                        <div onClick={click ? nextSlide : null}>
+                        <div onClick={nextSlide}>
                             <Button animate={true}>Next</Button>
                         </div>
                     </div>
