@@ -17,7 +17,7 @@ export function Container({ children, custom = '', full = false, align = 'center
         center: 'container-flex',
         right: 'container-flex-r',
         left: 'container-flex-l',
-        top : 'container-flex items-start',
+        top: 'container-flex items-start',
         bot: 'container-flex items-end'
     }
 
@@ -25,22 +25,22 @@ export function Container({ children, custom = '', full = false, align = 'center
         center: 'container-flex-col',
         right: 'container-flex-col items-end',
         left: 'container-flex-col items-start',
-        top : 'container-flex-col-t',
+        top: 'container-flex-col-t',
         bot: 'container-flex-col-b'
     }
 
     function handleType(dir) {
         switch (dir) {
-            case 'row':{
-                for(const al in rowContainer){
-                    if(align === al){
+            case 'row': {
+                for (const al in rowContainer) {
+                    if (align === al) {
                         return rowContainer[al]
                     }
                 }
             }
             case 'column': {
-                for(const al in colContainer){
-                    if(align === al){
+                for (const al in colContainer) {
+                    if (align === al) {
                         return colContainer[al]
                     }
                 }
@@ -49,7 +49,51 @@ export function Container({ children, custom = '', full = false, align = 'center
     }
 
     return (
-        <div className={`${handleType(dir)} ${full ? 'h-screen w-screen' : 'h-full w-full'} ${custom}`}>
+        <div className={`px-4 py-8 ${handleType(dir)} ${full ? 'h-[125vh] w-screen' : 'h-full w-full'} ${custom}`}>
+            {children}
+        </div>
+    )
+}
+
+export function Wrapper({ children, custom = '', align = 'center', dir = 'row' }) {
+
+    const rowContainer = {
+        center: 'container-flex',
+        right: 'container-flex-r',
+        left: 'container-flex-l',
+        top: 'container-flex items-start',
+        bot: 'container-flex items-end'
+    }
+
+    const colContainer = {
+        center: 'container-flex-col',
+        right: 'container-flex-col items-end',
+        left: 'container-flex-col items-start',
+        top: 'container-flex-col-t',
+        bot: 'container-flex-col-b'
+    }
+
+    function handleType(dir) {
+        switch (dir) {
+            case 'row': {
+                for (const al in rowContainer) {
+                    if (align === al) {
+                        return rowContainer[al]
+                    }
+                }
+            }
+            case 'column': {
+                for (const al in colContainer) {
+                    if (align === al) {
+                        return colContainer[al]
+                    }
+                }
+            }
+        }
+    }
+
+    return (
+        <div className={`h-full w-full ${handleType(dir)} ${custom}`}>
             {children}
         </div>
     )
