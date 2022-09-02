@@ -50,7 +50,7 @@ function JumbotronAnim() {
 
         const init = () => {
 
-            for (let i = 1; i <= 70; i++) {
+            for (let i = 1; i <= 90; i++) {
                 let size = (Math.random() * 10 + 1)
                 const dots = new Dots({
                     position: {
