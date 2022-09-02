@@ -71,7 +71,7 @@ const transitionList = {
 
 function MotionComp({ children, animation, classes,
     transition = { type: 'spring', speed: "normal" },
-    gestures = { type: 'tap', animation: 'scale-in', scale: "sm" }}) {
+    gestures = { type : '', animation: 'scale-in', scale: "sm" }}) {
 
     /**
      * 

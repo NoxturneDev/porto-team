@@ -129,6 +129,11 @@
     .header-xl {
         @apply mb-6 text-8xl font-extrabold tracking-wider leading-none text-gray-800
     }
+
+    .bg-overlay{
+        @apply before:content-['*'] before:absolute before:w-screen before:h-screen 
+        before:bg-[rgba(0,0,0)] before:opacity-50
+    }
 }
 
 
