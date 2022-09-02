@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 function About() {
   return (
-    <>
+    <div style={{overflowX: 'hidden'}}>
       <Nav />
       {/* <div className='flex bg-gray-900 items-center w-screen h-screen'>
           <h3 className='' >About Page</h3>
@@ -44,7 +44,7 @@ function About() {
 
       <Carousel />
       <Footer />
-    </>
+    </div>
   )
 }
 

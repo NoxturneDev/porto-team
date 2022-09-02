@@ -15,7 +15,7 @@ function Project() {
     five: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
   };
   return (
-    <>
+    <div style={{overflowX : 'hidden'}}>
       <Nav />
       <div className="font-bold text-center ">
         <h1 className="tracking-[.25em] header-lg">PROJECTKU</h1>
@@ -56,7 +56,7 @@ function Project() {
         animation
       />
       <Caraousel />
-    </>
+    </div>
   );
 }
 
