@@ -21,7 +21,7 @@ function Caraousel() {
         }
 
         gsap.to(anim.current, {
-            x: i * 5,
+            x: i * 7,
             ease: "power2.out"
         })
     }
