@@ -7,7 +7,7 @@ import MotionComp from '../animation/Motion'
  * @returns react components
  */
 
-function Paragraph({ children, custom = '', animation, align = "left" }) {
+function Paragraph({ children, custom = '', animation, align = "left", size = "md"}) {
 
   if (animation) {
     return (
@@ -20,7 +20,7 @@ function Paragraph({ children, custom = '', animation, align = "left" }) {
   }
 
   return (
-    <p className={`paragraph font-satoshi text-size ${custom} text-${align}`}>{children}</p>
+    <p className={`paragraph font-satoshi text-${size} ${custom} text-${align}`}>{children}</p>
   )
 }
 
