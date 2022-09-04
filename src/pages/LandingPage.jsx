@@ -8,7 +8,7 @@ import Caraousel from "../components/caraousel/Caraousel";
 import Section from "../components/Section";
 import MotionComp from "../animation/Motion";
 import JumbotronAnim from "../animation/JumbotronAnim";
-
+import Footer from "../components/Footer";
 
 function LandingPage() {
   return (
@@ -36,6 +36,7 @@ function LandingPage() {
           <Image url="../assets/23.png" size="sm" type="rounded" />
           <Image url="../assets/23.png" size="md" type="basic" />
       </Container>
+      <Footer />
     </div>
   );
 }
