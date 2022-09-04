@@ -13,7 +13,7 @@ function Paragraph({ children, custom = '', animation, align = "left", size = "m
     return (
       <MotionComp
       animation={`mini-${animation}`}
-      classes={`paragraph font-satoshi text-size ${custom} text-${align}`}>
+      classes={`paragraph font-satoshi text-${size} ${custom} text-${align}`}>
         {children}
       </MotionComp>
     )
