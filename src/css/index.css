@@ -109,7 +109,7 @@
 
   /* TYPHOGRAPHY */
   .text-size {
-    @apply text-[1.5rem] md:text-[1.8rem] lg:text-[2.4rem] xl:text-[1.4rem];
+    @apply text-[1.3rem] md:text-[1.4rem] lg:text-[22px] ;
   }
 
   .paragraph {
@@ -117,7 +117,7 @@
   }
 
   .header-sm {
-    @apply mb-4 text-[1.7rem] md:text-[2.5rem] lg:text-[3rem] font-semibold tracking-tight leading-none font-cabinet;
+    @apply mb-4 text-[1.5rem] md:text-[1.8rem] lg:text-[1.9rem] font-semibold tracking-tight leading-none font-cabinet;
   }
 
   .header-md {
@@ -125,11 +125,11 @@
   }
 
   .header-lg {
-    @apply mb-6 text-[2.7rem] md:text-[3.7rem] lg:text-[5rem] font-extrabold tracking-wider leading-none font-cabinet;
+    @apply mb-6 text-[2.7rem] md:text-[3.7rem] lg:text-[4.8rem] font-extrabold tracking-wider leading-none font-cabinet;
   }
 
   .header-xl {
-    @apply mb-6 text-[3rem] md:text-[4.7rem] lg:text-[6rem] font-extrabold tracking-wider leading-none font-cabinet;
+    @apply mb-6 text-[3rem] md:text-[4.7rem] lg:text-[5.8rem] font-extrabold tracking-wider leading-none font-cabinet;
   }
 
   .bg-overlay {

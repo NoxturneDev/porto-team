@@ -13,14 +13,14 @@ function Paragraph({ children, custom = '', animation, align = "left" }) {
     return (
       <MotionComp
       animation={`mini-${animation}`}
-      classes={`paragraph font-poppins ${custom} text-${align}`}>
+      classes={`paragraph font-satoshi text-size ${custom} text-${align}`}>
         {children}
       </MotionComp>
     )
   }
 
   return (
-    <p className={`paragraph font-poppins ${custom} text-${align}`}>{children}</p>
+    <p className={`paragraph font-satoshi text-size ${custom} text-${align}`}>{children}</p>
   )
 }
 
