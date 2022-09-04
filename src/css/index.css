@@ -108,7 +108,7 @@
 
   /* TYPHOGRAPHY */
   .text-size {
-    @apply text-[1.5rem] md:text-[1.8rem] lg:text-[2.4rem] xl:text-[1.4rem];
+    @apply text-[1.5rem] md:text-[1.8rem] lg:text-[2.4rem] xl:text-[1.4rem] uppercase;
   }
 
   .paragraph {
