@@ -4,27 +4,10 @@ import Section from '../Section'
 import Card from '../ui/Cards'
 import Button from '../ui/Button'
 import Slides from './Slides'
+import { Wrapper } from '../Container'
 
 function Caraousel() {
-    let i = 0
-    const anim = useRef(null)
     const slide = useRef(null)
-
-    function scrolling() {
-        let st = window.scrollY
-        const offset = anim.current.offsetTop + anim.current.offsetHeight
-
-        if (st > anim.current.offsetTop - 100) {
-            i--
-        } else if (st < offset) {
-            i++
-        }
-
-        gsap.to(anim.current, {
-            x: i * 7,
-            ease: "power2.out"
-        })
-    }
 
     let index = 0,
     click = true
@@ -62,6 +45,7 @@ function Caraousel() {
             console.log(index)
 
         }
+
         if (direction === "prev") {
             if (index < -2) {
                 const reset = gsap.set(slide.current, {
@@ -112,44 +96,26 @@ function Caraousel() {
         return
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', scrolling)
-
-        return (() => {
-            window.removeEventListener('scroll', scrolling)
-        })
-    })
 
     return (
         <>
-            <Section custom="bg-astro-purple-300 p-0">
-                <div ref={anim} className="container-flex translate-x[-100%]">
-                    <Card size="lg" custom="bg-astro-dark-100"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100"></Card>
-                    <Card size="lg" custom="bg-astro-dark-100"></Card>
-                    <Card size="md" custom="bg-astro-purple-100"></Card>
-                    <Card size="lg" custom="bg-astro-dark-100"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100"></Card>
-                    <Card size="md" custom="bg-astro-dark-100"></Card>
-                </div>
-            </Section>
-            <Section custom="p-0 bg-slate-500">
-                <ul className='container-flex w-screen bg-red-400 p-0' ref={slide} >
-                    <li className='slides slide-1' >
-                        <Slides position="next">Test 3</Slides>
+            
+            <Section custom="p-0">
+                <ul className='container-flex w-screen p-0' ref={slide} >
+                    <li className='slides slide-1'>
+                        <Slides >Test 3</Slides>
                     </li>
                     <li className='slides slide-1'>
-                        <Slides position="next">Test 1</Slides>
+                        <Slides >Test 1</Slides>
                     </li>
                     <li className='slides slide-2'>
-                        <Slides position="current">Test 2</Slides>
+                        <Slides >Test 2</Slides>
                     </li>
                     <li className='slides slide-3'>
-                        <Slides position="next">Test 3</Slides>
+                        <Slides >Test 3</Slides>
                     </li>
                     <li className='slides slide-3'>
-                        <Slides position="next">Test 1</Slides>
+                        <Slides >Test 1</Slides>
                     </li>
                 </ul>
                 <div className="button-group-floating container-flex p-0 absolute w-screen h-screen">
