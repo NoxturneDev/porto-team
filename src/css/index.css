@@ -11,7 +11,7 @@
   }
 
   .button-primary {
-    @apply button bg-astro-dark-100 hover: bg-astro-dark-100 text-white;
+    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
   }
 
   .button-primary-line {
@@ -19,7 +19,7 @@
   }
 
   .button-secondary {
-    @apply button bg-astro-dark-100 hover: bg-astro-dark-100 text-white;
+    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
   }
 
   .button-secondary-line {
@@ -109,7 +109,7 @@
 
   /* TYPHOGRAPHY */
   .text-size {
-    @apply text-[1.5rem] md:text-[1.8rem] lg:text-[2.4rem] xl:text-[1.4rem] lowercase;
+    @apply text-[1.5rem] md:text-[1.8rem] lg:text-[2.4rem] xl:text-[1.4rem];
   }
 
   .paragraph {
@@ -117,19 +117,19 @@
   }
 
   .header-sm {
-    @apply mb-4 text-[1.7rem] md: text-[2.5rem] lg:text-[3rem] font-semibold tracking-tight leading-none font-cabinet;
+    @apply mb-4 text-[1.7rem] md:text-[2.5rem] lg:text-[3rem] font-semibold tracking-tight leading-none font-cabinet;
   }
 
   .header-md {
-    @apply mb-4 text-[2rem] md: text-[2.9rem] lg:text-[4.2rem] font-extrabold tracking-tight leading-none font-cabinet;
+    @apply mb-4 text-[2rem] md:text-[2.9rem] lg:text-[4.2rem] font-extrabold tracking-tight leading-none font-cabinet;
   }
 
   .header-lg {
-    @apply mb-6 text-[2.7rem] md: text-[3.7rem] lg:text-[5rem] font-extrabold tracking-wider leading-none font-cabinet;
+    @apply mb-6 text-[2.7rem] md:text-[3.7rem] lg:text-[5rem] font-extrabold tracking-wider leading-none font-cabinet;
   }
 
   .header-xl {
-    @apply mb-6 text-[3rem] md: text-[4.7rem] lg:text-[6rem] font-extrabold tracking-wider leading-none font-cabinet;
+    @apply mb-6 text-[3rem] md:text-[4.7rem] lg:text-[6rem] font-extrabold tracking-wider leading-none font-cabinet;
   }
 
   .bg-overlay {
