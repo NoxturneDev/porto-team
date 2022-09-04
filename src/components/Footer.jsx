@@ -5,11 +5,9 @@ import Paragraph from "./Paragraph";
 const Footer = () => {
     return (
         <>
-            <Wrapper custom='border-zinc-200 h-36 bg-gray-900' align='center' >
-                <Paragraph align='center' custom='text-zinc-200 font-bold' >
-                    Lorem Lorem ipsum dolor sit amet,
-                    <br />
-                    consectetur adipiscing elit,
+            <Wrapper custom='h-28 bg-astro-dark-100' align='center' >
+                <Paragraph align='center' custom='text-white tracking-wider' size="sm">
+                    Lorem Lorem ipsum dolor sit amet consectetur adipiscing elit,
                 </Paragraph>
             </Wrapper>
         </>

@@ -7,8 +7,8 @@ function JumbotronAnim() {
     const letter = useRef(null)
     const initAnim = () => {
         const ctx = CANVAS.current.getContext('2d')
-        CANVAS.current.width = window.innerWidth
-        CANVAS.current.height = window.innerHeight
+        CANVAS.current.width = CANVAS.current.offsetWidth
+        CANVAS.current.height = CANVAS.current.offsetHeight
 
         class Dots {
             constructor({ position, size, direction, velocity }) {
@@ -26,7 +26,7 @@ function JumbotronAnim() {
             draw() {
                 ctx.beginPath()
                 ctx.arc(this.position.x, this.position.y, this.size, 0, Math.PI * 2, false)
-                ctx.fillStyle = "rgb(23, 31, 59)"
+                ctx.fillStyle = "#A396CB"
                 ctx.fill()
             }
 
@@ -51,7 +51,7 @@ function JumbotronAnim() {
         const init = () => {
 
             for (let i = 1; i <= 90; i++) {
-                let size = (Math.random() * 10 + 1)
+                let size = (Math.random() * 8 + 1)
                 const dots = new Dots({
                     position: {
                         x: (Math.random() * (window.innerWidth - size * 2) - (size * 2) + (size * 2)),
@@ -75,7 +75,7 @@ function JumbotronAnim() {
                     let distance = ((arr[a].position.x - arr[b].position.x) * (arr[a].position.x - arr[b].position.x)) + ((arr[a].position.y - arr[b].position.y) * (arr[a].position.y - arr[b].position.y))
 
                     if (distance < (window.innerWidth / 7) * (window.innerHeight / 7)) {
-                        ctx.strokeStyle = "rgb(90, 116, 139)"
+                        ctx.strokeStyle = "#A396CB"
                         ctx.lineWidth = 1
                         ctx.beginPath()
                         ctx.moveTo(arr[a].position.x, arr[a].position.y)
@@ -114,8 +114,8 @@ function JumbotronAnim() {
         initAnim()
     }, [])
     return (
-        <Container full custom="bg-slate-800">
-            <canvas ref={CANVAS}></canvas>
+        <Container custom="bg-astro-dark-100">
+            <canvas ref={CANVAS} className="h-screen w-screen"></canvas>
             <Container full custom="absolute">
                 <h1 className='header-lg text-white' ref={anim}><span ref={letter}>JUMBOTRON</span></h1>
             </Container>

@@ -17,7 +17,7 @@ import MotionComp from "../../animation/Motion";
 function ProjectSectionLeft({ title = "TITLE", img, url, desc, animation }) {
   if (animation) {
     return (
-      <Section custom="bg-slate-500">
+      <Section custom="bg-astro-purple-300">
         <Wrapper custom="shadow-2xl h-max p-0 ml-10">
           <Image
             url={img}
@@ -36,7 +36,7 @@ function ProjectSectionLeft({ title = "TITLE", img, url, desc, animation }) {
   }
 
   return (
-    <Section custom="bg-slate-500">
+    <Section custom="bg-astro-purple-300">
       <Wrapper custom="shadow-2xl p-0 h-max ml-10">
         <Image url={img} custom="h-auto w-full" rounded={true} />
       </Wrapper>
@@ -50,7 +50,7 @@ function ProjectSectionLeft({ title = "TITLE", img, url, desc, animation }) {
 function ProjectSectionRight({ title = "TITLE", img, url, desc, animation }) {
   if (animation) {
     return (
-      <Section custom="bg-blue-400">
+      <Section custom="bg-astro-purple-300">
         <Wrapper custom="w-100 h-3/4 translate-x-[8rem] z-10">
           <MotionComp animation="fade-left">
             <ProjectDesc title={title} url={url} desc={desc} align="right" />
@@ -66,7 +66,7 @@ function ProjectSectionRight({ title = "TITLE", img, url, desc, animation }) {
   }
 
   return (
-    <Section custom="bg-blue-400">
+    <Section custom="bg-astro-purple-300">
       <Wrapper custom="w-100 h-3/4 translate-x-[8rem]">
         <ProjectDesc title={title} url={url} desc={desc} align="right" />
       </Wrapper>
