@@ -14,7 +14,7 @@ function Nav() {
 
   return (
     <>
-      <Wrapper custom="flex justify-center items-center w-screen shadow-sm bg-slate-700 h-16 z-20 fixed px-5">
+      <Wrapper custom="flex justify-center items-center w-screen h-16 z-20 fixed px-5">
         <div className="grow p-4 text-gray-50 text-2xl font-bold">
           <h2>HALLOWEB</h2>
         </div>
