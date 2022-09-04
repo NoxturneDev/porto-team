@@ -4,17 +4,17 @@ import Contact from "../pages/Contact";
 import { Wrapper } from "./Container";
 
 function Nav() {
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false);
 
   const showModal = () => {
     if (modal == false) {
-      setModal(true)
+      setModal(true);
     }
-  }
+  };
 
   return (
     <>
-      <Wrapper custom="flex justify-center items-center w-screen h-16 z-20 fixed px-5">
+      <Wrapper custom="flex justify-center items-center w-screen h-16 z-20 fixed px-5  bg-astro-purple-300">
         <div className="grow p-4 text-gray-50 text-2xl font-bold">
           <h2>HALLOWEB</h2>
         </div>
@@ -29,7 +29,9 @@ function Nav() {
             <Link to="/project">Projects</Link>
           </li>
           <li className="m-8  text-gray-50 font-satoshi font-medium tracking-widest">
-            <h2 onClick={showModal} className="cursor-pointer">Contact</h2>
+            <h2 onClick={showModal} className="cursor-pointer">
+              Contact
+            </h2>
           </li>
         </ul>
       </Wrapper>
