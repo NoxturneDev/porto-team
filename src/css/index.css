@@ -3,26 +3,27 @@
 @tailwind utilities;
 
 @layer components {
+
   /* --- UTILS AND UI --- */
   /* buttons */
   .button {
-    @apply shadow-md font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none transition-all duration-200 uppercase cursor-pointer;
+    @apply shadow-md font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 focus: outline-none transition-all duration-200 uppercase cursor-pointer;
   }
 
   .button-primary {
-    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
+    @apply button bg-astro-dark-100 hover: bg-astro-dark-100 text-white;
   }
 
   .button-primary-line {
-    @apply button hover:bg-astro-dark-100 hover:text-white border-2;
+    @apply button hover: bg-astro-dark-100 hover:text-white border-2;
   }
 
   .button-secondary {
-    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
+    @apply button bg-astro-dark-100 hover: bg-astro-dark-100 text-white;
   }
 
   .button-secondary-line {
-    @apply button hover:bg-astro-dark-100 text-white border-2 border-astro-purple-100 hover:text-white;
+    @apply button hover: bg-astro-dark-100 text-white border-2 border-astro-purple-100 hover:text-white;
   }
 
   /* cards */
@@ -116,24 +117,23 @@
   }
 
   .header-sm {
-    @apply mb-4 text-[1.7rem] md:text-[2.5rem] lg:text-[3rem] font-semibold tracking-tight leading-none font-cabinet;
+    @apply mb-4 text-[1.7rem] md: text-[2.5rem] lg:text-[3rem] font-semibold tracking-tight leading-none font-cabinet;
   }
 
   .header-md {
-    @apply mb-4 text-[2rem] md:text-[2.9rem] lg:text-[4.2rem] font-extrabold tracking-tight leading-none font-cabinet;
+    @apply mb-4 text-[2rem] md: text-[2.9rem] lg:text-[4.2rem] font-extrabold tracking-tight leading-none font-cabinet;
   }
 
   .header-lg {
-    @apply mb-6 text-[2.7rem] md:text-[3.7rem] lg:text-[5rem] font-extrabold tracking-wider leading-none font-cabinet;
+    @apply mb-6 text-[2.7rem] md: text-[3.7rem] lg:text-[5rem] font-extrabold tracking-wider leading-none font-cabinet;
   }
 
   .header-xl {
-    @apply mb-6 text-[3rem] md:text-[4.7rem] lg:text-[6rem] font-extrabold tracking-wider leading-none font-cabinet;
+    @apply mb-6 text-[3rem] md: text-[4.7rem] lg:text-[6rem] font-extrabold tracking-wider leading-none font-cabinet;
   }
 
   .bg-overlay {
-    @apply before:content-['*'] before:absolute before:w-screen before:h-screen 
-        before:bg-[rgba(0,0,0)] before:opacity-50;
+    @apply before: content-['*'] before:absolute before:w-screen before:h-screen before:bg-[rgba(0, 0, 0)] before:opacity-50;
   }
 }
 
