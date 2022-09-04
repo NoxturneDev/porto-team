@@ -11,19 +11,19 @@
     }
 
     .button-primary {
-        @apply button bg-dark hover:bg-semi-dark text-white
+        @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white
     }
 
     .button-primary-line {
-        @apply button hover:bg-dark hover:text-white border-dark border-2
+        @apply button hover:bg-astro-dark-100 hover:text-white border-2
     }
 
     .button-secondary {
-        @apply button bg-semi-dark hover:bg-dark text-white
+        @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white
     }
 
     .button-secondary-line {
-        @apply button hover:bg-semi-dark text-semi-dark border-2 border-semi-dark hover:text-white
+        @apply button hover:bg-astro-dark-100 text-white border-2 border-astro-purple-100 hover:text-white
     }
 
     /* cards */

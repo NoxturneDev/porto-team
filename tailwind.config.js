@@ -13,10 +13,33 @@ module.exports = {
         'generalsans': ['General Sans', 'sans - serif'],
       },
       colors: {
-        'dark': '#1B2430',
-        'semi-dark': '#38486A',
-        'light': '#E7E1E1',
-        'semi-light': '#D9D9D9'
+        'hazel-blue': {
+          300: "#49C2F2",
+          200: "#38D0F2",
+          100: "#8DF2F2"
+        },
+        'hazel-brown': {
+          100: "#BF702A",
+          200: "#401708"
+        },
+        'nature-blue': {
+          200: "#2FC1DA",
+          100: "#ACEBF2"
+        },
+        'nature-green': {
+          100: "#388C11",
+          200: "#11592A"
+        },
+        'nature-yellow': "#C29836",
+        'astro-dark': {
+          100: "#282C76",
+          200: "#1D161E"
+        },
+        'astro-purple': {
+          100: "#A396CB",
+          200: "#4C1C46",
+          300: "#2B1D5A"
+        }
       }
     },
   },
