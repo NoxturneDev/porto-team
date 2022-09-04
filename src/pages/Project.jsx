@@ -7,7 +7,6 @@ import {
 import Caraousel from "../components/caraousel/Caraousel";
 import Footer from "../components/Footer";
 
-
 function Project() {
   const desc = {
     one: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
@@ -18,14 +17,14 @@ function Project() {
     five: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
   };
   return (
-    <div style={{overflowX : 'hidden'}}>
+    <div style={{ overflowX: "hidden" }}>
       <Nav />
-      <div className="font-bold text-center ">
+      <div className="font-bold text-center">
         <h1 className="tracking-[.25em] header-lg">PROJECTKU</h1>
       </div>
       <ProjectSectionLeft
         img="../assets/image/23.png"
-        title="ANTAR MEDIKA LANDING PAGE"
+        title="Antar Medika Landing Page"
         desc={desc.one}
         url="https://antarmedika.com/"
         animation
@@ -60,7 +59,6 @@ function Project() {
       />
       <Caraousel />
       <Footer />
-
     </div>
   );
 }
