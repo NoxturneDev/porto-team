@@ -122,16 +122,16 @@ function Caraousel() {
 
     return (
         <>
-            <Section custom="bg-slate-500 p-0">
+            <Section custom="bg-astro-purple-300 p-0">
                 <div ref={anim} className="container-flex translate-x[-100%]">
-                    <Card size="sm" custom="bg-slate-800"></Card>
-                    <Card size="lg" custom="bg-slate-900"></Card>
-                    <Card size="sm" custom="bg-slate-800"></Card>
-                    <Card size="md" custom="bg-slate-900"></Card>
-                    <Card size="lg" custom="bg-slate-800"></Card>
-                    <Card size="sm" custom="bg-slate-900"></Card>
-                    <Card size="lg" custom="bg-slate-900"></Card>
-                    <Card size="md" custom="bg-slate-800"></Card>
+                    <Card size="lg" custom="bg-astro-dark-100"></Card>
+                    <Card size="lg" custom="bg-astro-purple-100"></Card>
+                    <Card size="lg" custom="bg-astro-dark-100"></Card>
+                    <Card size="md" custom="bg-astro-purple-100"></Card>
+                    <Card size="lg" custom="bg-astro-dark-100"></Card>
+                    <Card size="lg" custom="bg-astro-purple-100"></Card>
+                    <Card size="lg" custom="bg-astro-purple-100"></Card>
+                    <Card size="md" custom="bg-astro-dark-100"></Card>
                 </div>
             </Section>
             <Section custom="p-0 bg-slate-500">
