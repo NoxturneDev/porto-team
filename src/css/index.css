@@ -7,23 +7,23 @@
   /* --- UTILS AND UI --- */
   /* buttons */
   .button {
-    @apply shadow-md font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 focus: outline-none transition-all duration-200 uppercase cursor-pointer;
+    @apply shadow-md font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 outline-none transition-all duration-200 uppercase cursor-pointer;
   }
 
   .button-primary {
-    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
+    @apply button bg-astro-dark-100 hover:bg-astro-purple-300 text-white;
   }
 
   .button-primary-line {
-    @apply button hover: bg-astro-dark-100 hover:text-white border-2;
+    @apply button hover:bg-astro-dark-100 text-white border-2 border-astro-dark-100 hover:border-astro-dark-100 px-6 py-2;
   }
 
   .button-secondary {
-    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
+    @apply button bg-astro-purple-200 hover:bg-astro-purple-100 text-white;
   }
 
   .button-secondary-line {
-    @apply button hover: bg-astro-dark-100 text-white border-2 border-astro-purple-100 hover:text-white;
+    @apply button hover:bg-astro-purple-200  border-2 border-astro-purple-200 text-white px-6 py-2;
   }
 
   /* cards */
@@ -133,7 +133,7 @@
   }
 
   .bg-overlay {
-    @apply before: content-['*'] before:absolute before:w-screen before:h-screen before:bg-[rgba(0, 0, 0)] before:opacity-50;
+    @apply before:content-['*'] before:absolute before:w-screen before:h-screen before:opacity-50;
   }
 }
 
