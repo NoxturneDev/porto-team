@@ -3,143 +3,140 @@
 @tailwind utilities;
 
 @layer components {
+  /* --- UTILS AND UI --- */
+  /* buttons */
+  .button {
+    @apply shadow-md font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none transition-all duration-200 uppercase cursor-pointer;
+  }
 
-    /* --- UTILS AND UI --- */
-    /* buttons */
-    .button {
-        @apply shadow-md font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none transition-all duration-200 uppercase cursor-pointer
-    }
+  .button-primary {
+    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
+  }
 
-    .button-primary {
-        @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white
-    }
+  .button-primary-line {
+    @apply button hover:bg-astro-dark-100 hover:text-white border-2;
+  }
 
-    .button-primary-line {
-        @apply button hover:bg-astro-dark-100 hover:text-white border-2
-    }
+  .button-secondary {
+    @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white;
+  }
 
-    .button-secondary {
-        @apply button bg-astro-dark-100 hover:bg-astro-dark-100 text-white
-    }
+  .button-secondary-line {
+    @apply button hover:bg-astro-dark-100 text-white border-2 border-astro-purple-100 hover:text-white;
+  }
 
-    .button-secondary-line {
-        @apply button hover:bg-astro-dark-100 text-white border-2 border-astro-purple-100 hover:text-white
-    }
+  /* cards */
+  .basic-card {
+    @apply flex justify-center items-center m-4 p-4 rounded shadow-md bg-slate-50;
+  }
 
-    /* cards */
-    .basic-card {
-        @apply flex justify-center items-center m-4 p-4 rounded shadow-md bg-slate-50;
-    }
+  .card-sm {
+    @apply basic-card w-32 h-40;
+  }
 
-    .card-sm {
-        @apply basic-card w-32 h-40;
-    }
+  .card-md {
+    @apply basic-card w-56 h-64;
+  }
 
-    .card-md {
-        @apply basic-card w-56 h-64;
-    }
+  .card-lg {
+    @apply basic-card w-64 h-80;
+  }
 
-    .card-lg {
-        @apply basic-card w-64 h-80;
-    }
+  /* --- LAYOUT -- */
+  /* container */
+  .container-flex {
+    @apply flex justify-center items-center;
+  }
 
+  .container-flex-l {
+    @apply flex justify-start items-center;
+  }
 
-    /* --- LAYOUT -- */
-    /* container */
-    .container-flex {
-        @apply flex justify-center items-center;
-    }
+  .container-flex-r {
+    @apply flex justify-end items-center;
+  }
 
-    .container-flex-l {
-        @apply flex justify-start items-center;
-    }
+  /* vertical container */
+  .container-flex-col {
+    @apply flex flex-col justify-center items-center;
+  }
 
-    .container-flex-r {
-        @apply flex justify-end items-center;
-    }
+  .container-flex-col-t {
+    @apply flex flex-col justify-start items-center;
+  }
 
-    /* vertical container */
-    .container-flex-col {
-        @apply flex flex-col justify-center items-center;
-    }
+  .container-flex-col-b {
+    @apply flex flex-col items-center justify-end;
+  }
 
-    .container-flex-col-t {
-        @apply flex flex-col justify-start items-center;
-    }
+  /* IMAGES */
+  .basic-image {
+    @apply shadow-md;
+  }
 
-    .container-flex-col-b {
-        @apply flex flex-col items-center justify-end;
-    }
+  .img-sm {
+    @apply basic-image w-32 h-auto;
+  }
 
-    /* IMAGES */
-    .basic-image {
-        @apply shadow-md
-    }
+  .img-md {
+    @apply basic-image w-64 h-auto;
+  }
 
-    .img-sm {
-        @apply basic-image w-32 h-auto
-    }
+  .img-lg {
+    @apply basic-image w-1/2 h-auto;
+  }
 
-    .img-md {
-        @apply basic-image w-64 h-auto
-    }
+  .img-xl {
+    @apply basic-image w-2/3 h-auto;
+  }
 
-    .img-lg {
-        @apply basic-image w-1/2 h-auto
-    }
+  .img-sm-rounded {
+    @apply w-32 h-auto rounded-sm;
+  }
 
-    .img-xl {
-        @apply basic-image w-2/3 h-auto
-    }
+  .img-md-rounded {
+    @apply w-64 h-auto rounded-md;
+  }
 
-    .img-sm-rounded {
-        @apply w-32 h-auto rounded-sm
-    }
+  .img-lg-rounded {
+    @apply w-1/2 h-auto rounded-md;
+  }
 
-    .img-md-rounded {
-        @apply w-64 h-auto rounded-md
-    }
+  .img-xl-rounded {
+    @apply w-2/3 h-auto rounded-md;
+  }
 
-    .img-lg-rounded {
-        @apply w-1/2 h-auto rounded-md
-    }
+  /* TYPHOGRAPHY */
+  .text-size {
+    @apply text-[1.5rem] md:text-[1.8rem] lg:text-[2.4rem] xl:text-[1.4rem];
+  }
 
-    .img-xl-rounded {
-        @apply w-2/3 h-auto rounded-md
-    }
+  .paragraph {
+    @apply mb-3 font-light;
+  }
 
+  .header-sm {
+    @apply mb-4 text-[1.7rem] md:text-[2.5rem] lg:text-[3rem] font-semibold tracking-tight leading-none font-cabinet;
+  }
 
-    /* TYPHOGRAPHY */
-    .paragraph {
-        @apply mb-3 font-light
-    }
+  .header-md {
+    @apply mb-4 text-[2rem] md:text-[2.9rem] lg:text-[4.2rem] font-extrabold tracking-tight leading-none font-cabinet;
+  }
 
-    .header-sm {
-        @apply mb-4 text-2xl font-bold tracking-tight leading-none text-gray-800
-    }
+  .header-lg {
+    @apply mb-6 text-[2.7rem] md:text-[3.7rem] lg:text-[5rem] font-extrabold tracking-wider leading-none font-cabinet;
+  }
 
-    .header-md {
-        @apply mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-800
-    }
+  .header-xl {
+    @apply mb-6 text-[3rem] md:text-[4.7rem] lg:text-[6rem] font-extrabold tracking-wider leading-none font-cabinet;
+  }
 
-    .header-lg {
-        @apply mb-6 text-6xl font-extrabold tracking-wider leading-none text-gray-800
-    }
-
-    .header-xl {
-        @apply mb-6 text-8xl font-extrabold tracking-wider leading-none text-gray-800
-    }
-
-    .bg-overlay{
-        @apply before:content-['*'] before:absolute before:w-screen before:h-screen 
-        before:bg-[rgba(0,0,0)] before:opacity-50
-    }
+  .bg-overlay {
+    @apply before:content-['*'] before:absolute before:w-screen before:h-screen 
+        before:bg-[rgba(0,0,0)] before:opacity-50;
+  }
 }
 
-
-
 /* Color  */
-
-
 
 /* TODO : FIX SOME CONTAINER CLASSES, SECTION CLASSES, PARAGRAPH AND ANOTHER TYPOGRAPHY */

@@ -19,8 +19,8 @@ function Project() {
   return (
     <div style={{ overflowX: "hidden" }}>
       <Nav />
-      <div className="font-bold text-center">
-        <h1 className="tracking-[.25em] header-lg">PROJECTKU</h1>
+      <div className="font-bold text-center mt-20 ">
+        <h1 className="tracking-[.25em] header-lg">OUR PROJECTS</h1>
       </div>
       <ProjectSectionLeft
         img="../assets/image/23.png"

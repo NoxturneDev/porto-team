@@ -7,11 +7,14 @@ function ProjectDesc({ title, url, desc, align = "left" }) {
     <Wrapper custom="h-4/4 text-slate-200" dir="column" align={align}>
       <h2 className="header-sm text-slate-200">{title}</h2>
       <div className="my-5 ">
-        <Paragraph custom=" subpixel-antialiased tracking-widest" align={align}>
+        <Paragraph
+          custom=" subpixel-antialiased tracking-widest text-size"
+          align={align}
+        >
           {desc}
         </Paragraph>
       </div>
-      <div className="my-5 text-xl font-semibold tracking-widest underline">
+      <div className="my-5 text-xl font-bold underline tracking-[0.8em] font-satoshi">
         <a href={url} target="blank">
           VIEW PROJECT
         </a>
