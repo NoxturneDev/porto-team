@@ -15,23 +15,20 @@ function About() {
           <Container custom='bg-gray-900' >
           </Container>
         </div> */}
-      <Container custom="bg-gray-900 w-full h-[200vh]" dir="column" full>
-        <h2 className="text-zinc-200 mb-5 font-semibold header-size tracking-widest font-cabinet">
+      <Container   custom="bg-astro-purple-300 w-full h-[200vh]" dir="column" full>
+        <h1 className="text-zinc-200 mb-5 font-semibold header-md header-size tracking-widest font-cabinet ">
           About Us
-        </h2>
+        </h1>
 
-        <div className="bg-slate-700 mt-7 mb-28   w-4/6 h-2/5"></div>
+        <div className="bg-astro-dark-100 mt-7 mb-28   w-4/6 h-2/5"></div>
         <Paragraph
-          custom="text-zinc-200 mt-28 pt-9 font-satoshi text-size"
+          custom="text-zinc-200 mt-28 pt-36 font-satoshi  text-size"
           align="center"
         >
-          Lorem Lorem ipsum dolor sit amet <br /> Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Dolores a porro eius ducimus deleniti
-          officia corporis cumque possimus id consequatur similique nesciunt
-          nulla labore beatae, qui iure asperiores totam minima excepturi autem
-          atque delectus nihil ratione? Fugit, possimus. Dolor fugiat quaerat
-          reprehenderit dolore laborum ipsam labore temporibus, rerum animi
-          aliquam!
+         Hi! HalloWeb is Digital Service Agency<br /> We can Handle all of your Problem and request for building 
+         an Web Design, Web Aplication, and UI UX Design, in HalloWeb we offer the best experience and service<br>
+         </br>
+          With fastest work and Responsibilites About the Project, So Let's Order to HALLOWEB!
         </Paragraph>
       </Container>
 
