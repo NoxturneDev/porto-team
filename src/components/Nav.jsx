@@ -16,7 +16,7 @@ function Nav() {
     <>
       <Wrapper custom="flex w-screen h-16 z-20 fixed px-6 py-5 mt-4">
         <div className="flex w-screen  justify-center items-center px-14 ">
-          <div className="grow p-4 text-gray-50 text-3xl font-bold font-generalsans  tracking-widest">
+          <div className="grow p-4 text-gray-50 text-3xl font-bold font-generalsans tracking-widest">
             <h2>HELLOWEB</h2>
           </div>
           <ul className="flex justify-center items-center color-white h-14  text-[22px] font-semibold text-slate-300">
@@ -29,7 +29,7 @@ function Nav() {
             <li className="m-8  font-satoshi tracking-widest">
               <Link to="/project">Projects</Link>
             </li>
-            <li className="m-8  font-satoshi tracking-widest">
+            <li className="m-8  font-satoshi tracking-widest bg-blue-500 hover:bg-blue-400 hover:text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full">
               <h2 onClick={showModal} className="cursor-pointer">
                 Contact
               </h2>
