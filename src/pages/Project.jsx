@@ -34,7 +34,7 @@ function Project() {
       />
       <ProjectSectionRight
         img="../assets/image/23.png"
-        title="ANTAR MEDIKA PAGE"
+        title="ANTAR MEDIKA LANDING PAGE"
         desc={desc.two}
         url="https://antarmedika.com/"
         animation
