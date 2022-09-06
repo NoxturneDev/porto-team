@@ -2,7 +2,7 @@ import React from "react";
 import { Wrapper } from "../Container";
 import Paragraph from "../Paragraph";
 
-function ProjectDesc({ title, url, desc, align}) {
+function ProjectDesc({ title, url, desc, align }) {
   return (
     <Wrapper custom="h-4/4 text-slate-200" dir="column" align={align}>
       <h2 className="header-sm text-slate-200">{title}</h2>
@@ -15,7 +15,7 @@ function ProjectDesc({ title, url, desc, align}) {
           {desc}
         </Paragraph>
       </div>
-      <div className="my-5 text-sm font-bold underline tracking-[0.8em] font-satoshi">
+      <div className="my-5 text-[1.2rem] font-[800] underline tracking-[0.8em] font-satoshi text-yellow-500">
         <a href={url} target="blank">
           VIEW PROJECT
         </a>
