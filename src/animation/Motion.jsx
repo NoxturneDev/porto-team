@@ -71,7 +71,7 @@ const transitionList = {
 
 function MotionComp({ children, animation, classes,
     transition = { type: 'spring', speed: "normal" },
-    gestures = { type : '', animation: 'scale-in', scale: "sm" }}) {
+    gestures = { type: '', animation: 'scale-in', scale: "sm" } }) {
 
     /**
      * 
@@ -83,7 +83,7 @@ function MotionComp({ children, animation, classes,
 
     // ? could be custom hook tho
     const selectOption = (select, obj, prop) => {
-        
+
         /** @param { String } i - searched value inside target object */
         for (const i in obj) {
             if (select === i) {
@@ -131,6 +131,7 @@ function MotionComp({ children, animation, classes,
     return (
         <AnimatePresence exitBeforeEnter mode='wait'>
             <motion.div
+                key="box"
                 variants={variants()}
                 exit="exit"
                 animate="visible"
