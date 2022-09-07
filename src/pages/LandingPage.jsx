@@ -9,16 +9,19 @@ import Section from "../components/Section";
 import MotionComp from "../animation/Motion";
 import JumbotronAnim from "../animation/JumbotronAnim";
 import Footer from "../components/Footer";
+import ParticleAnimation from "../animation/ParticleAnimation";
+import Contact from "./Contact";
 
 function LandingPage() {
-return (
-<div style={{ overflowX: 'hidden' }}>
-  <Nav />
-  <JumbotronAnim />
-  <Caraousel></Caraousel>
-  <Footer />
-</div>
-);
+  return (
+    <div style={{ overflowX: 'hidden' }} className="bg-astro-dark-100">
+      <Nav />
+      <JumbotronAnim />
+      <Caraousel></Caraousel>
+      <Footer />
+      <Contact />
+    </div>
+  );
 }
 
 export default LandingPage;
