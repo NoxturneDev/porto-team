@@ -2,10 +2,17 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-function Text({ children, min = 16, max = 20 }) {
+/**
+ * 
+ * @param {Number} min - Minimun font size value
+ * @param {Number} max - Maximum font size value 
+ * @returns React components
+ */
+
+function Text({ children, minSize = 16, maxSize = 20 }) {
     const [size, setSize] = useState(16)
 
-    const fluidFont = () => {
+    const fluidFont = (min, max) => {
         const vw = window.innerWidth,
             minVw = 640,
             maxVw = 1920
@@ -16,11 +23,10 @@ function Text({ children, min = 16, max = 20 }) {
         if (calc >= max) return setSize(max)
 
         setSize(calc)
-        console.log(calc)
     }
 
     useEffect(() => {
-        fluidFont()
+        fluidFont(minSize, maxSize)
         window.addEventListener('resize', fluidFont)
 
         return () => {
