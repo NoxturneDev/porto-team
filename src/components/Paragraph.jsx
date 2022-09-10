@@ -1,5 +1,7 @@
 import React from 'react'
 import MotionComp from '../animation/Motion'
+import Text from './Text'
+
 /**
  * 
  * @param {String} custom - custom tailwind classes for the components
@@ -7,20 +9,23 @@ import MotionComp from '../animation/Motion'
  * @returns react components
  */
 
-function Paragraph({ children, custom = '', animation, align = "left", size = "md"}) {
+function Paragraph({ children, customClass = '', animation, align = "left", size = "md" }) {
 
   if (animation) {
     return (
       <MotionComp
-      animation={`mini-${animation}`}
-      classes={`paragraph font-satoshi text-${size} ${custom} text-${align}`}>
-        {children}
+        animation={`mini-${animation}`}>
+        <Text customClass={`paragraph text-${align} ${customClass}`}>
+          {children}
+        </Text>
       </MotionComp>
     )
   }
 
   return (
-    <p className={`paragraph font-satoshi text-${size} ${custom} text-${align}`}>{children}</p>
+    <Text customClass={`paragraph text-${align} ${customClass}`}>
+      {children}
+    </Text>
   )
 }
 
