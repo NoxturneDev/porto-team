@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Contact from "../pages/Contact";
-import { Wrapper } from "./Container";
 import gsap from "gsap";
+import Text from "./Text";
+import { Wrapper } from "./Container";
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -10,7 +10,7 @@ function Nav() {
 
 
   const scrollDetect = () => {
-    if (window.scrollY > nav.current.offsetHeight) {
+    if (window.scrollY > nav.current.offsetHeight + 100) {
       setScrolled(true)
       return
     } else {
@@ -21,23 +21,20 @@ function Nav() {
 
 
   const animateOnScroll = (condition) => {
+    gsap.set(nav.current, {
+      position: 'static',
+      y: 0
+    })
+
     if (condition) {
       gsap.fromTo(nav.current, {
         opacity: 0,
         y: -50,
-        position: 'static'
       }, {
         opacity: 1,
         y: 0,
-        position: 'fixed'
-      })
-    } else {
-      gsap.fromTo(nav.current, {
-        y: 50
-      }, {
-        y: 0,
-        position: 'static',
-        duration: 0.2
+        position: 'fixed',
+        x:0
       })
     }
   }
@@ -55,24 +52,31 @@ function Nav() {
 
   return (
     <div ref={nav} className="bg-astro-dark-100 z-20 mb-10">
-      <Wrapper custom={`${scrolled ? 'right-0 top-0' : 'left-0'} flex w-screen h-16 px-6 py-5 text-size`}>
+      <Wrapper custom={`${scrolled ? 'right-0 top-0 left-0 shadow-md' : ''} flex w-max-screen h-16 px-6 py-5 text-size`}>
         <div className="flex w-screen  justify-center items-center px-14 ">
-          <div className="grow p-4 text-gray-50 text-3xl font-bold font-generalsans tracking-widest">
-            <h2>HELLOWEB</h2>
+          <div className=" grow p-4 text-white">
+            <Text textSize="md" customClass="header">HELLOWEB</Text>
           </div>
-          <ul className="flex justify-center items-center color-white h-14 font-semibold text-slate-300 uppercase">
-            <li className="m-8 font-satoshi tracking-widest hover:text-white hover:border-b-2 duration-200 transition">
-              <Link to="/">Home</Link>
+          <ul className="container-flex h-14 text-slate-300 ">
+            <li className="m-8">
+              <Text textSize="sm" customClass="tracking-widest ">
+                <Link to="/">Home</Link>
+              </Text>
+            </li>
+            <li className="m-8">
+              <Text textSize="sm" customClass="tracking-widest ">
+                <Link to="/project">Project</Link>
+              </Text>
+            </li>
+            <li className="m-8">
+              <Text textSize="sm" customClass="tracking-widest ">
+                <Link to="/about">About</Link>
+              </Text>
             </li>
             <li className="m-8  font-satoshi tracking-widest hover:text-white duration-200 transition">
-              <Link to="/about">About Us</Link>
-            </li>
-            <li className="m-8  font-satoshi tracking-widest hover:text-white duration-200 transition">
-              <Link to="/project">Projects</Link>
-            </li>
-            <li className="m-8  font-satoshi tracking-widest hover:text-white duration-200 transition">
-              Contact Us
-
+              <Text textSize="sm" customClass="tracking-widest ">
+                Contact us
+              </Text>
             </li>
           </ul>
         </div>
