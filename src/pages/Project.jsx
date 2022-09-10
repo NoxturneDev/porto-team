@@ -17,7 +17,7 @@ function Project() {
     five: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
   };
   return (
-    <div style={{ overflowX: "hidden" }} className=" bg-astro-purple-300">
+    <div style={{ overflowX: "hidden" }} className=" bg-astro-purple-300 relative">
       <Nav />
       <div className="font-bold text-center container-flex-col-b mt-20 h-[20vh]  text-yellow-300">
         <h1 className="tracking-[.25em] header-lg">OUR PROJECTS</h1>
