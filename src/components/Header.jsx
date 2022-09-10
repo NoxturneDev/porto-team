@@ -3,18 +3,18 @@ import { useState, useEffect } from 'react'
 
 /**
  * 
- * @param {String} textSize - String value to define the text size
- * @param {String} customClass - custom tailwind class for the text components
+ * @param {Number} min - Minimun font size value
+ * @param {Number} max - Maximum font size value 
  * @returns React components
  */
 
-function Text({ children, textSize = "sm", customClass = '' }) {
+function Header({ children, headerSize = "sm", customClass = '' }) {
     const [size, setSize] = useState(16)
 
     const breakpointSize = {
-        sm: [12, 16],
-        md: [16, 22],
-        lg: [24, 32],
+        sm: [24, 28],
+        md: [32, 48],
+        lg: [52, 72],
     }
 
     const handleSize = (size) => {
@@ -40,7 +40,7 @@ function Text({ children, textSize = "sm", customClass = '' }) {
 
     useEffect(() => {
 
-        const sz = handleSize(textSize)
+        const sz = handleSize(headerSize)
         fluidFont(sz[0], sz[1])
 
         window.addEventListener('resize', fluidFont)
@@ -51,8 +51,10 @@ function Text({ children, textSize = "sm", customClass = '' }) {
     })
 
     return (
-        <p style={{ fontSize: `${size}px` }} className={`text-white text ${customClass}`}>{children}</p>
+        <p style={{ fontSize: `${size}px` }} 
+        className={`text-white header ${customClass}`}
+        >{children}</p>
     )
 }
 
-export default Text
+export default Header
