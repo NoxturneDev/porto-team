@@ -51,7 +51,7 @@ function Text({ children, textSize = "sm", customClass = '' }) {
     })
 
     return (
-        <p style={{ fontSize: `${size}px` }} className={`text-white text ${customClass}`}>{children}</p>
+        <p style={{ fontSize: `${size}px` }} className={`text ${customClass}`}>{children}</p>
     )
 }
 
