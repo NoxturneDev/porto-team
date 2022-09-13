@@ -52,7 +52,7 @@ function Header({ children, headerSize = "sm", customClass = '' }) {
 
     return (
         <p style={{ fontSize: `${size}px` }} 
-        className={`text-white header ${customClass}`}
+        className={`text-white header text-center ${customClass}`}
         >{children}</p>
     )
 }
