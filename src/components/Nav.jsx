@@ -39,15 +39,17 @@ function Nav() {
       })
       setOpen(false)
     }
+
+    console.log(header.current.firstChild)
   }
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    gsap.set(navFull.current, {
-      xPercent: -100
-    })
+  //   gsap.set(navFull.current, {
+  //     xPercent: -100
+  //   })
 
-  }, [])
+  // }, [])
 
   return (
     <>
@@ -58,29 +60,29 @@ function Nav() {
       <div ref={navFull} style={{
         background: 'radial-gradient(circle, #161616, #111111)'
       }}
-      className="fixed"
+        className="fixed"
       >
         <Wrapper custom="px-10">
           <ul className="container-flex color-white h-14 font-semibold text-font-200 uppercase grow">
-            <li className="p-8 font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="p-6 font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/">Home</Link>
               </Text>
             </li>
-            <li className="p-8  font-satoshi tracking-widest  duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="p-6  font-satoshi tracking-widest  duration-200 transition hover:text-main-100 hover:bg-dark-300"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/about">About</Link>
               </Text>
             </li>
-            <li className="p-8  font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="p-6  font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/project">Project</Link>
               </Text>
             </li>
-            <li className="p-8  font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="p-6  font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/contact">Contact us</Link>
@@ -91,14 +93,15 @@ function Nav() {
             HELLOWEB
           </Header>
         </Wrapper>
-        <Container full align="top" custom="pt-20">
-          <Sphere customClass="container-flex text-center">
-            <div ref={header}>
-              <Header headerSize="lg" customClass="tracking-[5rem] text-font-200" >
+        <Container full align="top" custom="pt-20 ">
+          <Wrapper custom="h-max w-max relative">
+            <Sphere customClass="container-flex text-center p-10" />
+            <div ref={header} className="container-flex absolute left-0 right-0 bottom-0 top-0 ">
+              <Header headerSize="lg" customClass="tracking-widest text-font-200" >
                 <Link to={`/${title.toLowerCase()}`}>{title}</Link>
               </Header>
             </div>
-          </Sphere>
+          </Wrapper>
         </Container>
       </div >
     </>
