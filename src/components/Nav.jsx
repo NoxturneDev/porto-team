@@ -30,12 +30,16 @@ function Nav() {
 
     if (!opened) {
       gsap.to(navFull.current, {
-        xPercent: 0
+        xPercent: 0,
+        opacity: 1,
+        ease: "power2.out"
       })
       setOpen(true)
     } else {
       gsap.to(navFull.current, {
-        xPercent: -100
+        xPercent: -100,
+        opacity: 0,
+        ease: "power2.out"
       })
       setOpen(false)
     }
@@ -43,13 +47,14 @@ function Nav() {
     console.log(header.current.firstChild)
   }
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   gsap.set(navFull.current, {
-  //     xPercent: -100
-  //   })
+    gsap.set(navFull.current, {
+      xPercent: -100,
+      opacity: 0
+    })
 
-  // }, [])
+  }, [])
 
   return (
     <>
@@ -62,36 +67,36 @@ function Nav() {
       }}
         className="fixed"
       >
-        <Wrapper custom="px-10">
+        <Wrapper>
           <ul className="container-flex color-white h-14 font-semibold text-font-200 uppercase grow">
-            <li className="p-6 font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="nav-links"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/">Home</Link>
               </Text>
             </li>
-            <li className="p-6  font-satoshi tracking-widest  duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="nav-links"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/about">About</Link>
               </Text>
             </li>
-            <li className="p-6  font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="nav-links"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/project">Project</Link>
               </Text>
             </li>
-            <li className="p-6  font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300"
+            <li className="nav-links"
               onMouseEnter={changeTitle}>
               <Text >
                 <Link to="/contact">Contact us</Link>
               </Text>
             </li>
           </ul>
-          <Header headerSize="sm" customClass="text-font-200 tracking-widest">
+          {/* <Header headerSize="sm" customClass="text-font-200 tracking-widest">
             HELLOWEB
-          </Header>
+          </Header> */}
         </Wrapper>
         <Container full align="top" custom="pt-20 ">
           <Wrapper custom="h-max w-max relative">
