@@ -62,3 +62,13 @@ export function Wrapper({ children, customClass = '', align = 'center', directio
         </div>
     )
 }
+
+
+export function Section({ children, customClass, align = "center", direction}) {
+    return (
+        <Container full={true} direction={direction} align={align} customClass={`${customClass}`}>
+            {children}
+        </Container>
+    )
+}
+
