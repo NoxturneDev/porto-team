@@ -4,12 +4,13 @@ import Text from './Text'
 
 /**
  * 
- * @param {String} custom - custom tailwind classes for the components
- * @param {boolean} animate - default : false - animation state, return framer motion components if true
+ * @param {String} customClass - custom tailwind classes for the components
+ * @param {Boolean} animation - default : false - animation state, return framer motion components if true
+ * @param {String} align - Text align inside the paragraph. values ["left", "right"]
  * @returns react components
  */
 
-function Paragraph({ children, customClass = '', animation, align = "left", size = "md" }) {
+function Paragraph({ children, customClass = '', animation = false, align = "left" }) {
 
   if (animation) {
     return (
