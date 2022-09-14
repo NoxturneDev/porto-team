@@ -11,7 +11,7 @@ import MotionComp from '../../animation/Motion'
  * @returns react components
  */
 
-function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animation = "mini-fade-left" }) {
+function Image({ url, alt, size = 'sm', type = 'basic', customClass = '', animation = "mini-fade-left" }) {
 
   const basicImg = {
     sm: 'img-sm',
@@ -60,12 +60,12 @@ function Image({ url, alt, size = 'sm', type = 'basic', custom = '', animation =
   if (animation) {
     return (
       <MotionComp animation={`mini-${animation}`}>
-        <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
+        <img src={url} alt={alt} className={`${handleType(type)} ${customClass}`} />
       </MotionComp>
     )
   }
   return (
-    <img src={url} alt={alt} className={`${handleType(type)} ${custom}`} />
+    <img src={url} alt={alt} className={`${handleType(type)} ${customClass}`} />
   )
 }
 

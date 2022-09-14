@@ -10,12 +10,12 @@ const cardsType = {
 /**
  * 
  * @param {String} size - card size. default: sm, values [sm, md, lg]
- * @param {String} custom - custom tailwind classes for the components
+ * @param {String} customClass - custom tailwind classes for the components
  * @param {Boolean} animate - animation state, default : false
- * @returns 
+ * @returns react components
  */
 
-function Card({ children, size = 'sm', custom = '', animation }) {
+function Card({ children, size = 'sm', customClass = '', animation = false }) {
 
   function handleType(size) {
     for (const card in cardsType) {
@@ -30,14 +30,14 @@ function Card({ children, size = 'sm', custom = '', animation }) {
       <MotionComp
         animation={`mini-${animation}`}
         gestures={{ type: 'hover', animation: "scale-in", scale: "sm" }}
-        classes={`${handleType(size)} ${custom}`}>
+        classes={`${handleType(size)} ${customClass}`}>
         {children}
       </MotionComp>
     )
   }
 
   return (
-    <div className={`${handleType(size)} ${custom}`}>{children}</div>
+    <div className={`${handleType(size)} ${customClass}`}>{children}</div>
   )
 
 }
