@@ -13,6 +13,7 @@
   border-radius: 2px;
 }
 
+
 @layer components {  
   /* --- UTILS AND UI --- */
   /* buttons */
@@ -130,6 +131,9 @@
     @apply font-semibold tracking-widest leading-none font-cabinet
   }
 
+  .nav-links{
+    @apply p-6 font-satoshi tracking-widest duration-200 transition hover:text-main-100 hover:bg-dark-300 hover:shadow-md
+  }
   /* !!DEPRECATED */
   /* .header-sm {
     @apply mb-4 text-[1.5rem] md:text-[1.8rem] lg:text-[1.9rem] font-semibold tracking-tight leading-none font-cabinet;
