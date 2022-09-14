@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 
 /**
  * 
- * @param {Number} min - Minimun font size value
- * @param {Number} max - Maximum font size value 
+ * @param {String} headerSize - Sizing of the header. Default : "sm", values ["sm", "md", "lg"] 
+ * @param {String} customClass - Custom tailwind classes 
  * @returns React components
  */
 
