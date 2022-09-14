@@ -35,27 +35,27 @@ function ScrollCaraousel() {
     })
 
     return (
-        <Section custom="bg-astro-purple-300 p-0 ">
+        <Section custom="bg-main-300 p-0 ">
             <div ref={anim} className="container-flex-col translate-x[-100%]">
                 <Wrapper>
-                    <Card size="lg" custom="bg-astro-dark-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-dark-100 h-[8rem]"></Card>
-                    <Card size="md" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-dark-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100 h-[8rem] "></Card>
-                    <Card size="md" custom="bg-astro-dark-100 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="md" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-main-200 h-[8rem] "></Card>
+                    <Card size="md" custom="bg-dark-300 h-[8rem]"></Card>
                 </Wrapper>
                 <Wrapper>
-                    <Card size="lg" custom="bg-astro-dark-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-dark-100 h-[8rem]"></Card>
-                    <Card size="md" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-dark-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-astro-purple-100 h-[8rem]"></Card>
-                    <Card size="md" custom="bg-astro-dark-100 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="md" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
+                    <Card size="md" custom="bg-dark-300 h-[8rem]"></Card>
                 </Wrapper>
             </div>
         </Section>

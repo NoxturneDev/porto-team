@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { Container, Wrapper } from "./Container";
+import { Container, Wrapper } from "./layout/Container";
 import Text from "./Text";
 import Header from "./Header";
 import Sphere from "./Sphere";

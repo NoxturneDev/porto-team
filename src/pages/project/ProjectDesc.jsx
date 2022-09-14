@@ -1,6 +1,6 @@
 import React from "react";
-import { Wrapper } from "../Container";
-import Paragraph from "../Paragraph";
+import { Wrapper } from "../../components/layout/Container";
+import Paragraph from "../../components/Paragraph";
 
 function ProjectDesc({ title, url, desc, align }) {
   return (

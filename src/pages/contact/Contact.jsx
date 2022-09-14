@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
-import { Wrapper, Container } from "../components/Container";
-import MotionComp from "../animation/Motion";
+import { Wrapper, Container } from "../../components/layout/Container";
+import MotionComp from "../../animation/Motion";
 import { useEffect } from "react";
 import gsap from "gsap";
-import Button from "../components/ui/Button";
+import Button from "../../components/ui/Button";
+
+
 function Contact() {
 
   const modal = useRef(null)

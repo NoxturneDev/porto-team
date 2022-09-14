@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrapper } from "./Container";
-import Paragraph from "./Paragraph";
+import Paragraph from "../Paragraph";
 
 const Footer = () => {
     return (

@@ -1,3 +1,4 @@
+import { animate } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { Container } from "../components/Container";
 
@@ -5,6 +6,7 @@ function JumbotronAnim() {
   const CANVAS = useRef(null);
   const anim = useRef(null);
   const letter = useRef(null);
+
   const initAnim = () => {
     const ctx = CANVAS.current.getContext("2d");
     CANVAS.current.width = CANVAS.current.offsetWidth;
@@ -84,9 +86,9 @@ function JumbotronAnim() {
         for (let b = a; b < arr.length; b++) {
           let distance =
             (arr[a].position.x - arr[b].position.x) *
-              (arr[a].position.x - arr[b].position.x) +
+            (arr[a].position.x - arr[b].position.x) +
             (arr[a].position.y - arr[b].position.y) *
-              (arr[a].position.y - arr[b].position.y);
+            (arr[a].position.y - arr[b].position.y);
 
           if (distance < (window.innerWidth / 7) * (window.innerHeight / 7)) {
             ctx.strokeStyle = "#A396CB";
@@ -97,23 +99,26 @@ function JumbotronAnim() {
             ctx.stroke();
           }
         }
-      }
+        const animate = () => {
+
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+          for (let i = 0; i <= arr.length - 1; i++) {
+            arr[i].update();
+          }
+
+          connect();
+        };
+
+        init();
+        animate();
+      };
     }
 
-    const animate = () => {
-      window.requestAnimationFrame(animate);
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-      for (let i = 0; i <= arr.length - 1; i++) {
-        arr[i].update();
-      }
 
-      connect();
-    };
+  }
 
-    init();
-    animate();
-  };
 
   // const titleAnimation = () => {
   //     const headerString = "JUMBOTRON"
@@ -125,10 +130,16 @@ function JumbotronAnim() {
 
   useEffect(() => {
     // titleAnimation()
+
     initAnim();
+    return () => {
+      console.log('animation canceled')
+
+    }
+
   }, []);
   return (
-    <Container custom="bg-astro-dark-100 ">
+    <Container custom="bg-dark-300 ">
       <canvas ref={CANVAS} className="h-screen w-screen"></canvas>
       <Container full custom="absolute flex-col">
         <h1 className="header-lg text-white tracking-[0.5em]" ref={anim}>

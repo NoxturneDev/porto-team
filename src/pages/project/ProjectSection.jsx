@@ -1,6 +1,6 @@
 import React from "react";
-import { Wrapper } from "../Container";
-import Image from "../ui/Image";
+import { Wrapper } from "../../components/layout/Container";
+import Image from "../../components/ui/Image";
 import Section from "../Section";
 import ProjectDesc from "./ProjectDesc";
 import MotionComp from "../../animation/Motion";

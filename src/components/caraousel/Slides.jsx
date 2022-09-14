@@ -8,7 +8,7 @@ function Slides({ children, position }) {
             className={`container-flex w-screen h-screen`}>
 
             <Container custom="">
-                <Wrapper custom='bg-astro-dark-100 w-2/4 h-3/4 rounded-md shadow-md'></Wrapper>
+                <Wrapper custom='bg-dark-300 w-2/4 h-3/4 rounded-md shadow-md'></Wrapper>
             </Container>
         </div>
     )
