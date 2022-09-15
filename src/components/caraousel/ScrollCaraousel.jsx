@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { Wrapper, Section } from '../layout/Container'
+import Card from '../ui/Cards'
 
 function ScrollCaraousel() {
     let i = 0
@@ -38,24 +41,24 @@ function ScrollCaraousel() {
         <Section custom="bg-main-300 p-0 ">
             <div ref={anim} className="container-flex-col translate-x[-100%]">
                 <Wrapper>
-                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
-                    <Card size="md" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-main-200 h-[8rem] "></Card>
-                    <Card size="md" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
+                    <Card size="md" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-200 h-[6rem] "></Card>
+                    <Card size="md" customClass="bg-dark-300 h-[6rem]"></Card>
                 </Wrapper>
                 <Wrapper>
-                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
-                    <Card size="md" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-dark-300 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="lg" custom="bg-main-200 h-[8rem]"></Card>
-                    <Card size="md" custom="bg-dark-300 h-[8rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
+                    <Card size="md" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="lg" customClass="bg-dark-200 h-[6rem]"></Card>
+                    <Card size="md" customClass="bg-dark-300 h-[6rem]"></Card>
                 </Wrapper>
             </div>
         </Section>

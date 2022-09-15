@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { Container } from './layout/Container'
 
-function Sphere({ children, customClass }) {
+function Sphere({ children, customClass, size = 400}) {
     const [deg, setDeg] = useState(70)
     const sphere = useRef(null)
 
@@ -12,20 +12,20 @@ function Sphere({ children, customClass }) {
         setDeg(scroll)
     }
 
-    useEffect(() => {
-        window.addEventListener('scroll', changeDegree)
+    // useEffect(() => {
+    //     window.addEventListener('scroll', changeDegree)
 
-        return () => {
-            window.removeEventListener('scroll', changeDegree)
-        }
-    }, [])
+    //     return () => {
+    //         window.removeEventListener('scroll', changeDegree)
+    //     }
+    // }, [])
 
     return (
         <div
             ref={sphere}
-            className={`w-[400px] h-[400px] rounded-full shadow-md ${customClass}`}
+            className={`w-[500px] h-[500px] rounded-full shadow-md ${customClass}`}
             style={{
-                background: `linear-gradient(${deg}deg, #DB0F97, #600040`
+                background: `linear-gradient(${deg}deg, #282828, #161616`
             }}
         >
             {children}
