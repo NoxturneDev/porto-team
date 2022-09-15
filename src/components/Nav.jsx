@@ -98,8 +98,8 @@ function Nav() {
             HELLOWEB
           </Header> */}
         </Wrapper>
-        <Container full align="top" custom="pt-20 ">
-          <Wrapper custom="h-max w-max relative">
+        <Container full align="top" customClass="pt-20 ">
+          <Wrapper customClass="h-max w-max relative">
             <Sphere customClass="container-flex text-center p-10" />
             <div ref={header} className="container-flex absolute left-0 right-0 bottom-0 top-0 ">
               <Header headerSize="lg" customClass="tracking-widest text-font-200" >
