@@ -58,12 +58,15 @@ function HeaderMarquee({ children }) {
     })
 
     return (
-        <Section customClass="bg-dark-100">
-            <div ref={marquee}>
-                <h1 className="text-main-100 header text-[15rem] w-max">{children}-{children}-{children}-{children}</h1>
-                <h1 style={{ transform: 'rotateX(180deg)' }} className="text-dark-300 header text-[15rem] w-max ">{children}-{children}-{children}-{children}</h1>
-            </div>
-        </Section>
+        <div ref={marquee}>
+            <h1 className="text-main-100 header text-[15rem] w-max">
+                {children}-{children}-{children}-{children}
+            </h1>
+            <h1 style={{ transform: 'rotateX(180deg)' }}
+                className="text-dark-300 header text-[15rem] w-max ">
+                {children}-{children}-{children}-{children}
+            </h1>
+        </div>
     )
 }
 

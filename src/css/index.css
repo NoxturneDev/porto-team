@@ -13,6 +13,13 @@
   border-radius: 2px;
 }
 
+.bg-radial-main {
+  background: radial-gradient(circle, #DB0F97, #600040);
+}
+
+.bg-radial-dark {
+  background: radial-gradient(circle, #161616, #111111);
+}
 
 @layer components {  
   /* --- UTILS AND UI --- */
@@ -154,6 +161,7 @@
   .bg-overlay {
     @apply before:content-['*'] before:absolute before:w-screen before:h-screen before:opacity-50;
   }
+
 }
 
 /* Color  */
