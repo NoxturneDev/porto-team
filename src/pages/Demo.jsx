@@ -4,9 +4,11 @@ import HeaderMarquee from '../animation/HeaderMarquee'
 import { Section, Wrapper } from '../components/layout/Container'
 import ScrollCaraousel from '../components/caraousel/ScrollCaraousel'
 import Sphere from '../components/Sphere'
+import Line from '../components/Line'
 
-function Demo() {
+function Demo(props) {
 
+    console.log(props)
     const init = () => {
         luxy.init()
 
@@ -27,6 +29,7 @@ function Demo() {
             </Section>
             <Section customClass='bg-radial-dark'>
                 <Wrapper>
+                    <Line title="ANJAY"></Line>
                     <HeaderMarquee>TECH-STACK</HeaderMarquee>
                 </Wrapper>
                 <Wrapper customClass='absolute z-10'>
