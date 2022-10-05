@@ -76,8 +76,7 @@ function Caraousel() {
     function prevSlide() {
         if(!click) return "ga bisa"
 
-        index--
-
+     
         slideIt("prev")
         return
     }
@@ -99,7 +98,6 @@ function Caraousel() {
 
     return (
         <>
-            
             <Section custom="p-0">
                 <ul className='container-flex w-screen p-0' ref={slide} >
                     <li className='slides slide-1'>
