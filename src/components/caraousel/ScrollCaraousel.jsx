@@ -38,8 +38,8 @@ function ScrollCaraousel() {
     })
 
     return (
-        <Section custom="bg-main-300 p-0 ">
-            <div ref={anim} className="container-flex-col translate-x[-100%]">
+        <Section custom="bg-main-300 p-0">
+            <div ref={anim} className="container-flex-col translate-x[-100%]" style={{overflowX: 'hidden'}}>
                 <Wrapper>
                     <Card size="lg" customClass="bg-dark-300 h-[6rem]"></Card>
                     <Card size="lg" customClass="bg-dark-200 h-[6rem]"></Card>
