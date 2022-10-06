@@ -6,7 +6,7 @@ import Sphere from '../../components/Sphere'
 function ProjectShowcase() {
     return (
         <Section customClass="bg-radial-dark min-h-[200vh]" direction="column">
-            <HeaderMarquee>PROJECT-PROJECT</HeaderMarquee>
+            <HeaderMarquee>PROJECT-PROJECT-PROJECT-PROJECT</HeaderMarquee>
             <Sphere />
         </Section>
     )
