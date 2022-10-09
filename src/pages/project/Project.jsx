@@ -11,6 +11,7 @@ function Project() {
   };
   return (
     <div style={{ overflowX: "hidden" }} className=" bg-dark-300 relative">
+      <h1>project</h1>
       
     </div>
   );
