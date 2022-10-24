@@ -47,13 +47,11 @@ function handleType(align, direction) {
 
 
 export function Container({ children, customClass = '', full = false, align = 'center', direction = 'row', ref }) {
-    React.forwardRef(ref => {
         return (
             <div ref={ref} className={`px-4 py-8 ${handleType(align, direction)} ${full ? 'h-[125vh] w-screen' : 'h-full w-full'} ${customClass}`}>
                 {children}
             </div>
         )
-    })
 }
 
 export const ContainerRef = React.forwardRef(({ children, customClass = '', full = false, align = 'center', direction = 'row'}, ref) => {

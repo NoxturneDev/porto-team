@@ -58,6 +58,7 @@ function Nav() {
 
   return (
     <>
+      {/* toggle icon nav */}
       <div onClick={toggleNav} className="sticky z-20 left-5 top-5 mr-10">
         <Toggle w="22px" h="22px" color="#C20C86" />
       </div>
