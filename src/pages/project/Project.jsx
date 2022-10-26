@@ -7,6 +7,7 @@ import Header from "../../components/Header"
 import Text from "../../components/Text"
 import Line from "../../components/Line"
 import ProjectSlide from "./ProjectSlide";
+import Nav from "../../components/Nav"
 
 function Project() {
   const line = useRef(null)
@@ -46,17 +47,18 @@ function Project() {
     // line animation
     gsap.fromTo(line.current, { width: 0 }, { width: '100%', yoyo: true, repeat: -1, ease: 'power2.out', duration: 1 })
 
+    const scrollContainer = container.current
     // trigger side scrolling
-    window.addEventListener('wheel', (e) => {
+    scrollContainer.addEventListener('wheel', (e) => {
       sideScroll(e)
     }, { passive: false })
 
     return () => {
-      window.removeEventListener('wheel', (e) => {
+      scrollContainer.removeEventListener('wheel', (e) => {
         sideScroll(e)
       }, { passive: false })
     }
-  }, [])
+  }, [container])
 
   const desc = {
     one: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
@@ -66,13 +68,15 @@ function Project() {
     four: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
     five: "AntarMedika merambah bisnis Teknologi informasi dibidang palayanan jasa kesehatan, mulai dari aplikasi manajemen,perangkat,fasilitas kesehatan,konsultan, dan SDM.",
   };
+
   return (
-      <section className="container-flex-l min-w-max max-h-screen h-screen  bg-dark-300 text-main-200 overflow-y-hidden" ref={container}>
+    <>
+      <section className="container-flex-l min-w-max max-h-screen h-screen  bg-radial-dark text-main-200 overflow-y-hidden" ref={container}>
         {/* project page opener */}
         <div className="container-flex-col w-screen">
           <Sphere customClass="my-10" />
-          <Header customClass="absolute" headerSize="lg">
-            OUR PROJECT
+          <Header customClass="absolute w-fit" headerSize="mega">
+            WHAT WE'VE <span className="text-main-200">MADE</span>
           </Header>
           {/* navigation line */}
           <div className="container-flex">
@@ -87,6 +91,7 @@ function Project() {
         <ProjectSlide />
         <ProjectSlide />
       </section >
+    </>
   );
 }
 
