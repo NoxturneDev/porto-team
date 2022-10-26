@@ -15,13 +15,14 @@ function Header({ children, headerSize = "sm", customClass = '' }) {
         sm: [24, 28],
         md: [32, 48],
         lg: [52, 72],
+        mega: [88, 120]
     }
 
     const handleSize = (size) => {
         for (const sz in breakpointSize) {
             if (size === sz) {
                 return breakpointSize[sz]
-            } 
+            }
         }
     }
 
@@ -51,9 +52,9 @@ function Header({ children, headerSize = "sm", customClass = '' }) {
     })
 
     return (
-        <p style={{ fontSize: `${size}px` }} 
-        className={`text-white header text-center ${customClass}`}
-        >{children}</p>
+        <h1 style={{ fontSize: `${size}px` }}
+            className={`text-white header text-center ${customClass}`}
+        >{children}</h1>
     )
 }
 
