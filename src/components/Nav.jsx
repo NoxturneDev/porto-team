@@ -58,7 +58,8 @@ function Nav() {
 
   return (
     <>
-      <div onClick={toggleNav} className="fixed z-20 left-5 top-5 mr-10">
+      {/* toggle icon nav */}
+      <div onClick={toggleNav} className="sticky z-20 left-5 top-5 mr-10">
         <Toggle w="22px" h="22px" color="#C20C86" />
       </div>
 
@@ -67,7 +68,8 @@ function Nav() {
       }}
         className="fixed"
       >
-        <Wrapper>
+        {/* navbar on top */}
+        <Wrapper customClass="w-full z-20">
           <ul className="container-flex color-white h-14 font-semibold text-font-200 uppercase grow">
             <li className="nav-links"
               onMouseEnter={changeTitle}>
@@ -98,7 +100,8 @@ function Nav() {
             HELLOWEB
           </Header> */}
         </Wrapper>
-        <Container full align="top" customClass="pt-20 ">
+        {/* menu full page */}
+        <Container full align="top" customClass="pt-20 z-20">
           <Wrapper customClass="h-max w-max relative">
             <Sphere customClass="container-flex text-center p-10" />
             <div ref={header} className="container-flex absolute left-0 right-0 bottom-0 top-0 ">

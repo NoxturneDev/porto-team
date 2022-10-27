@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import Section from '../Section'
 import Card from '../ui/Cards'
 import Button from '../ui/Button'
 import Slides from './Slides'
-import { Wrapper } from '../Container'
+import { Wrapper , Section} from '../layout/Container'
 
 function Caraousel() {
     const slide = useRef(null)

@@ -1,54 +1,15 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
 import { Section, Wrapper } from '../../components/layout/Container'
-import Header from '../../components/Header'
+import AboutDetail from '../about/AboutDetail'
 
-const parentHoverAnimation = {
-    hover: {
-        backgroundColor: "#C20C86",
-        transition: { duration: 1, type: "tween" }
-    },
-}
-const childrenHoverAnimation = {
-    initial: { opacity: 0 },
-    hover: { opacity: 1 }
-}
+
 function AboutSection() {
+
     return (
-        <Section direction="column" customClass="bg-radial-dark px-20" align='left'>
-            <motion.div
-                variants={parentHoverAnimation}
-                whileHover="hover"
-            >
-                <Header headerSize="md" customClass="my-5">HALLOWEB IS A DIGITAL WEB SERVICE AGENCY</Header>
-                {/* <motion.div
-                    animate="hover"
-                >
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, minima magnam debitis eum sequi ipsum sint dignissimos odit necessitatibus illo?</p>
-                </motion.div> */}
-            </motion.div>
-            <motion.div
-                variants={parentHoverAnimation}
-                whileHover="hover"
-            >
-                <Header headerSize="md" customClass="my-5">HALLOWEB IS A DIGITAL WEB SERVICE AGENCY</Header>
-                {/* <motion.div
-                    animate="hover"
-                >
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, minima magnam debitis eum sequi ipsum sint dignissimos odit necessitatibus illo?</p>
-                </motion.div> */}
-            </motion.div>
-            <motion.div
-                variants={parentHoverAnimation}
-                whileHover="hover"
-            >
-                <Header headerSize="md" customClass="my-5">HALLOWEB IS A DIGITAL WEB SERVICE AGENCY</Header>
-                {/* <motion.div
-                    animate="hover"
-                >
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, minima magnam debitis eum sequi ipsum sint dignissimos odit necessitatibus illo?</p>
-                </motion.div> */}
-            </motion.div>
+        <Section direction="column" customClass="bg-radial-dark " align='left'>
+            <AboutDetail title="HALLOWEB IS A VERY COOL AGENCY DUDE!">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, molestiae ad asperiores est autem consectetur facilis. Dicta ex autem distinctio.j</AboutDetail>
+            <AboutDetail title="HALLOWEB IS A VERY COOL AGENCY DUDE!">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, molestiae ad asperiores est autem consectetur facilis. Dicta ex autem distinctio.j</AboutDetail>
+            <AboutDetail title="HALLOWEB IS A VERY COOL AGENCY DUDE!">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, molestiae ad asperiores est autem consectetur facilis. Dicta ex autem distinctio.j</AboutDetail>
         </Section>
     )
 }
